@@ -1,3 +1,7 @@
+// button for text or icon + text
+// second padding variant is text-padding, may rename to "bloated-padding" or "cushion"
+// needs a modifier that makes it grow horizontally to 100% (for the form button)
+
 .button {
 	display: inline-flex;
 	padding: 0;
@@ -6,6 +10,8 @@
 	align-items: center;
 	vertical-align: middle;
 
+	cursor: pointer;
+
 	font-size: rem(18px);
 	font-family: Rubik;
 	color: #fff;
@@ -13,10 +19,13 @@
 	text-transform: none;
 	line-height: normal;
 
+	padding: rem(25px) rem(24px);
+
 	transition: $transition;
 
 	&_primary {
 		gap: rem(16px);
+		padding: rem(25px) rem(24px);
 
 		&:hover {
 			background-color: $primary-hover;
@@ -25,18 +34,28 @@
 
 	&_text-padding {
 		padding-inline: rem(32px);
-	}
 
-	&_text-padding-s {
-		padding-inline: rem(24px);
+		@media #{media('<',xxl)} {
+			paddin-inline: rem(24px);
+		}
 	}
 
 	&_secondary {
 		background: #f3f3f3;
 		color: #364a46;
+		padding: rem(25px);
 		svg {
 			width: rem(24px);
 			height: rem(24px);
+
+			@media #{media('<',xxl)} {
+				width: rem(16px);
+				height: rem(16px);
+			}
+
+			@media #{media('<',xs)} {
+				padding: rem(14px);
+			}
 		}
 	}
 
@@ -52,7 +71,8 @@
 	@media #{media('<',xxl)} {
 		border-radius: rem(8px);
 		font-size: rem(12px);
-		height: rem(44px);
+		padding: rem(14px) rem(12px);
+
 		&_primary {
 			gap: rem(8px);
 		}

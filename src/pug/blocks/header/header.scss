@@ -4,7 +4,6 @@
 	grid-template-rows: 1fr;
 	gap: rem(24px);
 	align-items: center;
-	height: rem(90px);
 	overflow: hidden;
 
 	padding: rem(8px);
@@ -60,7 +59,6 @@
 	}
 
 	@media #{media('<',xxl)} {
-		height: rem(60px);
 		align-items: center;
 		grid-template-columns: repeat(4, 1fr);
 		& > * {

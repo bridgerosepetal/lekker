@@ -1,0 +1,28 @@
+.icon-button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1;
+	padding: rem(25px);
+	background-color: #f3f3f3;
+	border-radius: rem(16px);
+
+	&_primary {
+		background-color: #dd5799;
+	}
+
+	@media #{media('<',xxl)} {
+		padding: rem(14px);
+		border-radius: rem(8px);
+	}
+
+	svg {
+		width: rem(24px);
+		height: rem(24px);
+
+		@media #{media('<',xxl)} {
+			width: rem(16px);
+			height: rem(16px);
+		}
+	}
+}
