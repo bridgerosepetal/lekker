@@ -16,9 +16,14 @@
 		grid-column-end: span 3;
 	}
 
+	&__burger-menu {
+		display: none;
+	}
+
 	&__logo {
 		grid-column-start: 1;
 		padding-left: rem(16px);
+		display: flex;
 		svg {
 			height: rem(32px);
 		}
@@ -78,6 +83,27 @@
 			display: none;
 		}
 		&__contact {
+			display: none;
+		}
+	}
+
+	@media #{media('<',m)} {
+		border-radius: rem(12px);
+
+		&__burger-menu {
+			display: inline-flex;
+		}
+		&__logo {
+			grid-column-start: 2;
+			grid-column-end: span 2;
+			justify-content: center;
+		}
+		&__buttons {
+			grid-column-start: 4;
+			grid-column-end: span 1;
+		}
+		&__buttons > *:last-child,
+		&__buttons > *:first-child {
 			display: none;
 		}
 	}

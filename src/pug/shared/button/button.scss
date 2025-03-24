@@ -17,7 +17,6 @@
 
 	&_primary {
 		gap: rem(16px);
-		padding-inline: rem(24px);
 
 		&:hover {
 			background-color: $primary-hover;
@@ -26,6 +25,10 @@
 
 	&_text-padding {
 		padding-inline: rem(32px);
+	}
+
+	&_text-padding-s {
+		padding-inline: rem(24px);
 	}
 
 	&_secondary {
