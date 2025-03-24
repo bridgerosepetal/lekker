@@ -1,13 +1,15 @@
 .wrapper {
-  position: relative;
+	position: relative;
 
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	padding-inline: rem(24px);
+	padding-top: rem(24px);
 
-  min-height: 100vh;
-  margin: 0 auto;
+	min-height: 100vh;
+	margin: 0 auto;
 
-  main {
-    flex: 1 0;
-  }
+	main {
+		flex: 1 0;
+	}
 }

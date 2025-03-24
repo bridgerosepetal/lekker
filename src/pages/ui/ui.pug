@@ -1,25 +1,29 @@
 extends ../../layout/layout
 
 block variables
-  -
-    const pageName = 'ui'
-    const pageTitle = 'ui'
+	-
+		const pageName = 'ui'
+		const pageTitle = 'ui'
 
 block description
-  meta(name='description', content='Описание страницы Test')
+	meta(name='description', content='Описание страницы Test')
 
 block content
-  main.ui-page(data-barba='container', data-barba-namespace=pageName)
-    .inner
-      br
-      br
-      br
-      //- +rem-select(ordersSelectProps3)(placeholder='Область применения')
-      br
-      br
-      br
+	main.ui-page(data-barba='container', data-barba-namespace=pageName)
+		.inner
+			br
+			br
+			br
+			//- +rem-select(ordersSelectProps3)(placeholder='Область применения')
+			br
+			br
+			br
 
-      +button("_primary")
-        +more
-        span Продукция
-      +button
+			div
+				+button("_primary")
+					span Primary
+				+button("_primary")
+					+more
+					span Primary
+				+button("_primary")
+					span Primary

@@ -1,39 +1,66 @@
 .button {
-  display: inline;
-  padding-block: rem(25px);
-  padding-inline: rem(24px);
-  background-color: $primary;
-  border-radius: rem(16px);
+	display: inline-flex;
+	padding: 0;
+	background-color: $primary;
+	border-radius: rem(16px);
+	align-items: center;
+	vertical-align: middle;
 
-  font-size: rem(14px);
-  font-family: Rubik;
-  color: #fff;
-  font-weight: 500;
-  text-transform: none;
+	font-size: rem(18px);
+	font-family: Rubik;
+	color: #fff;
+	font-weight: 500;
+	text-transform: none;
+	line-height: normal;
 
-  transition: $transition;
+	transition: $transition;
 
-  &:hover {
-    background-color: $primary-hover;
-  }
+	&_primary {
+		gap: rem(16px);
+		padding-inline: rem(24px);
 
-  & > *:not(:last-child) {
-    margin-right: rem(16px);
-  }
+		&:hover {
+			background-color: $primary-hover;
+		}
+	}
 
-  @media #{media('<',m)} {
-    padding-block: rem(14px);
-    padding-inline: rem(12px);
-    border-radius: rem(8px);
+	&_text-padding {
+		padding-inline: rem(32px);
+	}
 
-    & > *:not(:last-child) {
-      margin-right: rem(8px);
-    }
-  }
+	&_secondary {
+		background: #f3f3f3;
+		color: #364a46;
+		svg {
+			width: rem(24px);
+			height: rem(24px);
+		}
+	}
 
-  svg {
-    width: rem(24px);
-    height: rem(24px);
-    margin-top: rem(-2px);
-  }
+	&_square {
+		aspect-ratio: 1 / 1;
+	}
+
+	svg {
+		width: rem(24px);
+		height: rem(24px);
+	}
+
+	@media #{media('<',xxl)} {
+		border-radius: rem(8px);
+		font-size: rem(12px);
+		height: rem(44px);
+		&_primary {
+			gap: rem(8px);
+		}
+
+		&_text-padding {
+			padding-inline: rem(12px);
+		}
+
+		svg {
+			width: rem(16px);
+			height: rem(16px);
+		}
+	}
 }
