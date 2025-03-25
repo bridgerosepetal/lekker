@@ -3,7 +3,7 @@ header.header
 	.header__burger-menu
 		+icon-button("_primary")(href='#')
 			+burger
-	.header__logo
+	a.header__logo(href='/')
 		+logo
 	.header__buttons
 		+button("_primary, _text-padding-s")(href='#')
@@ -13,11 +13,12 @@ header.header
 			+search
 		+icon-button(href='#')
 			+phone
-	.header__navigation
+	nav.header__navigation
 		a(href='#', class='link') О компании
 		a(href='#', class='link') Новости
 		a(href='#', class='link') Где купить
 		a(href='#', class='link') Контакты
 	.header__contact
-		a(href='#', class='link link_semibold') 8 812 448-54-65
+		address
+			a(href='#', class='link link_semibold') 8 812 448-54-65
 		+button("_secondary, _text-padding")(href='#') Стать партнером

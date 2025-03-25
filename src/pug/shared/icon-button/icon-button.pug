@@ -1,14 +1,14 @@
 mixin icon-button(mods)
-  -
-    const baseName = 'icon-button'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+	-
+		const baseName = 'icon-button'
+		let allMods = ''
+		if (typeof mods !== 'undefined' && mods) {
+			const modsList = mods.split(',')
+			for (const element of modsList) {
+				allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+			}
+			allMods = allMods.trim()
+		}
 
-  .icon-button(class=allMods)&attributes(attributes)
-    block
+	a.icon-button(class=allMods)&attributes(attributes)
+		block
