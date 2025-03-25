@@ -1,61 +1,39 @@
 .breadcrumbs {
-  display: flex;
-  align-items: center;
+	display: inline-flex;
+	align-items: center;
+	gap: rem(31px);
+	font-size: rem(16px);
+	font-family: TT Firs Neue;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 90%; /* 14.4px */
+	text-transform: uppercase;
+	svg {
+		stroke: currentColor;
+		transform: translateY(rem(-1px));
+	}
 
-  @include media-tablet {
-    overflow: auto hidden;
-  }
+	&__item {
+		position: relative;
 
-  &__item {
-    position: relative;
+		display: inline-flex;
+		white-space: nowrap;
+		color: #575757;
+	}
 
-    margin-right: 5px;
-    padding-right: 10px;
+	&__link {
+		display: inline-flex;
+		gap: rem(8px);
+		cursor: pointer;
 
-    font-size: 14px;
-    white-space: nowrap;
+		@include media-hover {
+			color: #0a8;
+		}
+	}
 
-    @media #{media('<',t)} {
-      font-size: 12px;
-    }
-
-    @include media-tablet {
-      font-size: 12px;
-    }
-
-    &::after {
-      content: '';
-
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-
-      width: 6px;
-      height: 1px;
-
-      background: #aaaaaa;
-    }
-
-    &:last-child {
-      margin-right: 0;
-      padding-right: 0;
-
-      &::after {
-        display: none;
-      }
-    }
-  }
-
-  &__link {
-    color: #575757;
-
-    @include media-hover {
-      color: $primary1;
-    }
-  }
-
-  &__text {
-    color: #aaaaaa;
-  }
+	&__text {
+		display: inline-flex;
+		gap: rem(8px);
+		color: #0a8;
+	}
 }

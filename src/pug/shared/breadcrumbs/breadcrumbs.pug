@@ -3,11 +3,11 @@ mixin breadcrumbs(mods)
 		const baseName = 'breadcrumbs'
 		let allMods = ''
 		if (typeof mods !== 'undefined' && mods) {
-		  const modsList = mods.split(',')
-		  for (const element of modsList) {
-		    allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-		  }
-		  allMods = allMods.trim()
+			const modsList = mods.split(',')
+			for (const element of modsList) {
+				allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+			}
+			allMods = allMods.trim()
 		}
 
 	ul.breadcrumbs(class=allMods)&attributes(attributes)
@@ -17,14 +17,19 @@ mixin breadcrumbs-item(text, href, mods)
 	-
 		let allMods = ''
 		if (typeof mods !== 'undefined' && mods) {
-		  const modsList = mods.split(',')
-		  for (const element of modsList) {
-		    allMods += ' breadcrumbs__item_' + element.trim()
-		  }
+			const modsList = mods.split(',')
+			for (const element of modsList) {
+				allMods += ' breadcrumbs__item_' + element.trim()
+			}
 		}
 
+	//- href could be passed as a native attribute instead?
 	li.breadcrumbs__item(class=allMods)&attributes(attributes)
 		if (typeof(href) !== 'undefined' && href)
-			a.breadcrumbs__link(href=href)!= text
+			a.breadcrumbs__link(href=href)
+				| !{ text }
+				+goback
 		else
-			span.breadcrumbs__text!= text
+			span.breadcrumbs__text
+				| !{ text }
+				+current-page

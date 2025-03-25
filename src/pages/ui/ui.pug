@@ -11,19 +11,7 @@ block description
 block content
 	main.ui-page(data-barba='container', data-barba-namespace=pageName)
 		.inner
-			br
-			br
-			br
-			//- +rem-select(ordersSelectProps3)(placeholder='Область применения')
-			br
-			br
-			br
-
-			div
-				+button("_primary")
-					span Primary
-				+button("_primary")
-					+more
-					span Primary
-				+button("_primary")
-					span Primary
+			+breadcrumbs
+				+breadcrumbs-item("Главная","https://google.com")
+				+breadcrumbs-item("Контакты")
+			h1 Контакты
