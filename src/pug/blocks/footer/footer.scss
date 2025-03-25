@@ -1,3 +1,158 @@
 .footer {
-  flex: 0 1;
+	display: grid;
+	column-gap: rem(24px);
+	grid-template-columns: repeat(16, 1fr);
+	grid-template-areas:
+		'. logo logo . navigation navigation navigation . contacts contacts . . action-call action-call action-call .'
+		'. mascot mascot . navigation navigation navigation . socials socials . . action-call action-call action-call .'
+		'. mascot mascot . navigation navigation navigation . socials socials . . . . . .'
+		'. copyright copyright . policy policy policy policy . . . . made-in made-in made-in . '
+		'disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer';
+
+	padding-inline: rem(24px);
+	padding-top: rem(80px);
+	overflow: visible;
+
+	background-color: #f3f3f3;
+
+	&__background {
+		grid-column-start: 1;
+		grid-column-end: span 16;
+		grid-row-start: 1;
+		grid-row-end: span 4;
+
+		background-image: url(../../public/images/squiggy-footer.png);
+		background-repeat: no-repeat;
+		background-position: bottom right;
+		margin-inline: rem(-48px);
+		background-size: 40%;
+	}
+
+	&__logo {
+		grid-area: logo;
+		svg {
+			height: rem(32px);
+			fill: #364a46;
+		}
+	}
+
+	&__mascot {
+		grid-area: mascot;
+		margin-block: rem(60px);
+	}
+
+	&__copyright {
+		grid-area: copyright;
+		font-family: Rubik;
+		font-size: rem(14px);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%; /* 16.8px */
+		color: hsl(168, 15.63%, 25.1% / 0.7);
+	}
+
+	&__navigation {
+		grid-area: navigation;
+		& > ul > li {
+			color: var(--, #364a46);
+			font-family: 'TT Firs Neue';
+			font-size: 40px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 90%; /* 36px */
+			letter-spacing: -0.8px;
+		}
+
+		& > ul > li:not(:first-child) {
+			margin-top: rem(24px);
+		}
+	}
+
+	&__policy {
+		grid-area: policy;
+		color: var(--, #364a46);
+		font-family: Rubik;
+		font-size: rem(16px);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%; /* 19.2px */
+	}
+
+	&__contacts {
+		grid-area: contacts;
+		color: var(--, #364a46);
+		font-family: 'TT Firs Neue';
+		font-size: rem(24px);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 90%; /* 21.6px */
+		letter-spacing: rem(-0.48px);
+
+		& > ul > li:not(:first-child) {
+			margin-top: rem(12px);
+		}
+	}
+
+	&__socials {
+		grid-area: socials;
+		margin-top: rem(86px);
+		display: grid;
+		grid-auto-flow: column;
+		gap: rem(8px);
+	}
+
+	&__action-call {
+		grid-area: action-call;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-start;
+	}
+
+	&__made-in {
+		grid-area: made-in;
+		display: flex;
+		justify-content: flex-end;
+		padding-bottom: rem(48px);
+
+		& > * {
+			flex-basis: rem(218px);
+		}
+	}
+
+	&__social-box {
+		aspect-ratio: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: rem(74px);
+		border: solid rem(2px) #ececec;
+		border-radius: rem(16px);
+		background-color: #fff;
+		transition: $transition;
+
+		@include media-hover {
+			background-color: #fdfdfd;
+			box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+		}
+	}
+
+	&__disclaimer {
+		grid-area: disclaimer;
+		padding-top: rem(45px);
+		padding-bottom: rem(48px);
+		background-color: #fff;
+		margin-inline: rem(-24px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		color: rgba(0, 0, 0, 0.15);
+		text-align: center;
+		font-family: Rubik;
+		font-size: rem(37px);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%; /* 44.4px */
+		letter-spacing: rem(-1.48px);
+	}
 }
