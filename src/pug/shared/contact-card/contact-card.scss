@@ -11,7 +11,8 @@
 
 	@media #{media('<',xxl)} {
 		padding: rem(24px);
-		width: rem(366px);
+		width: unset;
+		min-width: rem(366px);
 		gap: rem(24px);
 	}
 
