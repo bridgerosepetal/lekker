@@ -20,12 +20,12 @@ export default {
       devices: { max: '1200px' },
       tablet: { max: '1200px', min: '769px' },
       mobile: { max: '768px' },
-      xxl: { max: '1920px' },
+      xxl: { max: '1919px' },
       ll: { max: '1440px' },
       d: { max: '1201px' },
       t: { max: '1024px' },
       lg: { max: '992px' },
-      m: { max: '768px' },
+      m: { max: '767px' },
       s: { max: '576px' },
       xs: { max: '375px' }
     }

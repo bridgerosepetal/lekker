@@ -1,3 +1,127 @@
 .contact-card {
-  position: relative;
+	padding: rem(32px);
+	display: flex;
+	flex-direction: column;
+	gap: rem(99px);
+	width: rem(608px);
+	border-radius: rem(24px);
+	justify-content: space-between;
+	position: relative;
+	overflow: hidden;
+
+	@media #{media('<',xxl)} {
+		padding: rem(24px);
+		width: rem(366px);
+		gap: rem(24px);
+	}
+
+	& > * {
+		z-index: 1;
+	}
+
+	p {
+		color: var(--, #364a46);
+		text-shadow: 0px rem(4px) rem(4px) rgba(0, 0, 0, 0.25);
+		font-family: Rubik;
+		font-size: rem(24px);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+
+		@media #{media('<',xxl)} {
+			font-size: rem(16px);
+			text-shadow: none;
+		}
+	}
+
+	&__head {
+		display: flex;
+		flex-direction: column;
+		gap: rem(12px);
+	}
+
+	&__title {
+	}
+
+	&__description {
+		width: rem(400px);
+
+		@media #{media('<',xxl)} {
+			width: rem(261px);
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		gap: rem(13px);
+
+		flex-basis: rem(77px);
+
+		color: var(--, #364a46);
+		font-family: Rubik;
+		font-size: rem(24px);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+
+		a {
+			display: inline-flex;
+			gap: rem(16px);
+			align-items: center;
+		}
+
+		@media #{media('<',xxl)} {
+			font-size: rem(16px);
+			line-height: 130%; /* 20.8px */
+			flex-basis: rem(38px);
+		}
+	}
+
+	&__contact-icon {
+		aspect-ratio: 1;
+		padding: rem(6px);
+		border-radius: rem(8px);
+		background-color: #fff;
+
+		stroke: #000;
+
+		svg {
+			width: rem(20px);
+			height: rem(20px);
+		}
+	}
+
+	&_green {
+		background-color: #d2f6ec;
+
+		background-image: url('../../public/images/squiggy-long.png');
+		background-size: cover;
+
+		& .contact-card__contact-icon {
+			stroke: #00aa88;
+		}
+	}
+
+	&_pink {
+		background-color: #fde0ed;
+
+		background-image: url('../../public/images/squiggy-round.png');
+		background-size: cover;
+
+		& .contact-card__contact-icon {
+			stroke: #dd5799;
+		}
+	}
+
+	&_sandy {
+		background-color: #ffeed2;
+
+		background-image: url('../../public/images/squiggy-hearts.png');
+		background-size: cover;
+
+		& .contact-card__contact-icon {
+			stroke: #fbbd20;
+		}
+	}
 }

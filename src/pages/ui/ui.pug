@@ -1,4 +1,5 @@
 extends ../../layout/layout
+include ../../pug/shared/svg/svg
 
 block variables
 	-
@@ -11,7 +12,13 @@ block description
 block content
 	main.ui-page(data-barba='container', data-barba-namespace=pageName)
 		.inner
-			+breadcrumbs
+			+breadcrumbs(class='mt-6')
 				+breadcrumbs-item("Главная","https://google.com")
 				+breadcrumbs-item("Контакты")
-			h1 Контакты
+			h1(class='mt-6') Контакты
+			div(class='mt-12 grid grid-cols-3 gap-2 xxl:grid-cols-2 m:grid-cols-1')
+				+contact-card("<h5>Секретарь</h5>", "Как стать умнее или избавиться от йододефицита", [{ text: "8 812 448-54-65", href: "tel:88124485465"}, {text: "help_gendir@lekker.ru", href: "mailto:help_gendir@lekker.ru"}], "_green")
+
+				+contact-card("<h5>Отдел продаж</h5>", "", [{text: "8 812 702-72-62", href: "tel:88127027262"}, {text: "prodazha@lekker.ru", href: "mailto:prodazha@lekker.ru"}], "_pink")
+
+				+contact-card("<h5>Отдел рекламы</h5>", "", [{text: "reklama@lekker.ru", href: "mailto:reklama@lekker.ru"}], "_sandy")

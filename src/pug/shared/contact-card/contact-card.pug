@@ -1,14 +1,28 @@
-mixin contact-card(mods)
-  -
-    const baseName = 'contact-card'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+mixin contact-card(title, description = '', contacts = '', mods)
+	-
+		const baseName = 'contact-card'
+		let allMods = ''
+		if (typeof mods !== 'undefined' && mods) {
+			const modsList = mods.split(',')
+			for (const element of modsList) {
+				allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+			}
+			allMods = allMods.trim()
+		}
 
-  .contact-card(class=allMods)&attributes(attributes)
-    block
+	.contact-card(class=allMods)&attributes(attributes)
+		.contact-card__head
+			.contact-card__title!= title
+			p.contact-card__description= description
+		address.contact-card__contacts
+			if Array.isArray(contacts)
+				each contact in contacts 
+					a(href=contact.href)
+						if typeof(contact.href) === "string"
+							if contact.href.startsWith("tel:")
+								.contact-card__contact-icon
+									+phone-contact 
+							else if contact.href.startsWith("mailto:")
+								.contact-card__contact-icon
+									+mail-contact
+						= contact.text

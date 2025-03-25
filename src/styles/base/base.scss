@@ -7,3 +7,37 @@ body {
 		overflow: hidden;
 	}
 }
+
+h1,
+h2,
+h5 {
+	color: #364a46;
+	font-family: 'TT Firs Neue';
+	font-style: normal;
+	font-weight: 600;
+}
+
+h1 {
+	font-size: rem(120px);
+	line-height: 90%;
+	letter-spacing: rem(-2.4px);
+}
+
+h2 {
+	font-size: rem(80px);
+	line-height: 100%;
+	letter-spacing: rem(-1.6px);
+}
+
+h5 {
+	font-size: rem(32px);
+	font-weight: 600;
+	line-height: 100%; /* 32px */
+	letter-spacing: rem(-0.64px);
+
+	@media #{media('<',xxl)} {
+		font-size: rem(20px);
+		line-height: 100%; /* 20px */
+		letter-spacing: rem(-0.4px);
+	}
+}

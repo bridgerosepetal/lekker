@@ -9,6 +9,10 @@
 	min-height: 100vh;
 	margin: 0 auto;
 
+	@media #{media('<',xxl)} {
+		padding-inline: rem(12px);
+	}
+
 	main {
 		flex: 1 0;
 	}
