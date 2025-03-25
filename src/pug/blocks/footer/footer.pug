@@ -1,5 +1,6 @@
 -
 footer.footer
+	.footer__background
 	.footer__logo
 		+logo
 	nav.footer__navigation
@@ -34,7 +35,8 @@ footer.footer
 		a
 			+button("_primary, _text-padding") Стать партнером
 	.footer__made-in
-		span Сделано в CloudMill
+		span
+			| Сделано в&nbsp;
+			span(class='ml-0 font-bold text-[#DD5799]') CloudMill
 	.footer__copyright © 2002-2023 ООО «Леккер»
 	.footer__disclaimer ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ
-	.footer__background
