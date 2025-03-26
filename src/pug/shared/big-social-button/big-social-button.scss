@@ -1,0 +1,39 @@
+.big-social-button {
+	--_accent: var(--accent, #f0f0f0);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	cursor: pointer;
+
+	width: rem(399px);
+
+	aspect-ratio: 1;
+	border-radius: 100%;
+	border: rem(2px) solid #f0f0f0;
+
+	transition: $transition;
+
+	@include media-hover {
+		border-width: rem(12px);
+		border-color: var(--accent, #f0f0f0);
+	}
+
+	svg {
+		fill: var(--accent, #f0f0f0);
+		width: rem(66px);
+	}
+
+	&_youtube {
+		--accent: #f00;
+	}
+
+	&_vk {
+		--accent: #07f;
+	}
+
+	&_odnoklassniki {
+		--accent: #f7931e;
+	}
+}
