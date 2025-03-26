@@ -1,132 +1,148 @@
 .contact-card {
-	padding: rem(32px);
-	display: flex;
-	flex-direction: column;
-	gap: rem(99px);
-	width: rem(608px);
-	border-radius: rem(24px);
-	justify-content: space-between;
-	position: relative;
-	overflow: hidden;
+  padding: rem(32px);
+  display: flex;
+  flex-direction: column;
+  gap: rem(99px);
+  width: rem(608px);
+  border-radius: rem(24px);
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
 
-	@media #{media('<',d)} {
-		padding: rem(24px);
-		width: unset;
-		min-width: rem(366px);
-		gap: rem(24px);
-	}
+  @media #{media('<',d)} {
+    padding: rem(24px);
+    width: unset;
+    min-width: rem(366px);
+    gap: rem(24px);
+  }
 
-	@media #{media('<',m)} {
-		min-width: rem(351px);
-	}
+  @media #{media('<',m)} {
+    min-width: rem(351px);
+  }
 
-	& > * {
-		z-index: 1;
-	}
+  & > * {
+    z-index: 1;
+  }
 
-	p {
-		color: var(--, #364a46);
-		text-shadow: 0px rem(4px) rem(4px) rgba(0, 0, 0, 0.25);
-		font-family: Rubik;
-		font-size: rem(24px);
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
+  p {
+    color: var(--, #364a46);
+    text-shadow: 0px rem(4px) rem(4px) rgba(0, 0, 0, 0.25);
+    font-family: Rubik;
+    font-size: rem(24px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 
-		@media #{media('<',d)} {
-			font-size: rem(16px);
-			text-shadow: none;
-		}
-	}
+    @media #{media('<',d)} {
+      font-size: rem(16px);
+      text-shadow: none;
+    }
+  }
 
-	&__head {
-		display: flex;
-		flex-direction: column;
-		gap: rem(12px);
-	}
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12px);
+  }
 
-	&__title {
-	}
+  &__title {
+  }
 
-	&__description {
-		width: rem(400px);
+  &__description {
+    width: rem(400px);
 
-		@media #{media('<',d)} {
-			width: rem(261px);
-		}
-	}
+    @media #{media('<',d)} {
+      width: rem(261px);
+    }
+  }
 
-	&__contacts {
-		display: flex;
-		flex-direction: column;
-		gap: rem(13px);
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: rem(13px);
 
-		flex-basis: rem(77px);
+    flex-basis: rem(77px);
 
-		color: var(--, #364a46);
-		font-family: Rubik;
-		font-size: rem(24px);
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
+    color: var(--, #364a46);
+    font-family: Rubik;
+    font-size: rem(24px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 
-		a {
-			display: inline-flex;
-			gap: rem(16px);
-			align-items: center;
-		}
+    a {
+      display: inline-flex;
+      gap: rem(16px);
+      align-items: center;
+    }
 
-		@media #{media('<',d)} {
-			font-size: rem(16px);
-			line-height: 130%; /* 20.8px */
-			flex-basis: rem(38px);
-		}
-	}
+    @media #{media('<',d)} {
+      font-size: rem(16px);
+      line-height: 130%; /* 20.8px */
+      flex-basis: rem(38px);
+    }
+  }
 
-	&__contact-icon {
-		aspect-ratio: 1;
-		padding: rem(6px);
-		border-radius: rem(8px);
-		background-color: #fff;
+  &__contact-icon {
+    aspect-ratio: 1;
+    padding: rem(6px);
+    border-radius: rem(8px);
+    background-color: #fff;
 
-		stroke: #000;
+    stroke: #000;
 
-		svg {
-			width: rem(20px);
-			height: rem(20px);
-		}
-	}
+    svg {
+      width: rem(20px);
+      height: rem(20px);
+    }
+  }
 
-	&_green {
-		background-color: #d2f6ec;
+  &_green {
+    background-color: #d2f6ec;
 
-		background-image: url('../../public/images/squiggy-long.png');
-		background-size: cover;
+    background-image: url('../../public/images/squiggy-long.png');
+    background-size: cover;
 
-		& .contact-card__contact-icon {
-			stroke: #00aa88;
-		}
-	}
+    & .contact-card__contact-icon {
+      stroke: #00aa88;
+    }
 
-	&_pink {
-		background-color: #fde0ed;
+    @media #{media('<',d)} {
+      background-position: bottom 0px right 0px;
+    }
+  }
 
-		background-image: url('../../public/images/squiggy-round.png');
-		background-size: cover;
+  &_pink {
+    background-color: #fde0ed;
 
-		& .contact-card__contact-icon {
-			stroke: #dd5799;
-		}
-	}
+    background-image: url('../../public/images/squiggy-round.png');
+    background-size: cover;
 
-	&_sandy {
-		background-color: #ffeed2;
+    & .contact-card__contact-icon {
+      stroke: #dd5799;
+    }
 
-		background-image: url('../../public/images/squiggy-hearts.png');
-		background-size: cover;
+    @media #{media('<',d)} {
+      background-position: bottom 0px right 0px;
+    }
+  }
 
-		& .contact-card__contact-icon {
-			stroke: #fbbd20;
-		}
-	}
+  &_sandy {
+    background-color: #ffeed2;
+
+    background-image: url('../../public/images/squiggy-hearts.png');
+    background-size: cover;
+
+    & .contact-card__contact-icon {
+      stroke: #fbbd20;
+    }
+
+    @media #{media('<',d)} {
+      background-position: bottom 0px right 0px;
+    }
+
+    @media #{media('<',m)} {
+      background-position: bottom rem(-20px) right 0px;
+    }
+  }
 }
