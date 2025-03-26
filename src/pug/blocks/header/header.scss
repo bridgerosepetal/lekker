@@ -1,115 +1,129 @@
 .header {
-	display: grid;
-	grid-template-columns: repeat(16, 1fr);
-	grid-template-rows: 1fr;
-	gap: rem(24px);
-	align-items: center;
-	overflow: hidden;
-	margin-inline: rem(24px);
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: 1fr;
+  gap: rem(24px);
+  align-items: center;
+  overflow: hidden;
+  margin-inline: rem(24px);
 
-	padding: rem(8px);
+  padding: rem(8px);
 
-	border: rem(2px) solid #f0f0f0;
-	border-radius: rem(20px);
+  border: rem(2px) solid #f0f0f0;
+  border-radius: rem(20px);
 
-	box-shadow: 0px 14px 24px 0px rgba(0, 0, 0, 0.04);
-	backdrop-filter: blur(12px);
+  box-shadow: 0px 14px 24px 0px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(12px);
 
-	& > * {
-		grid-column-end: span 3;
-	}
+  & > * {
+    grid-column-end: span 3;
+  }
 
-	&__burger-menu {
-		display: none;
-	}
+  &__burger-menu {
+    display: none;
+  }
 
-	&__logo {
-		grid-column-start: 1;
-		padding-left: rem(16px);
-		display: flex;
-		pointer-events: none;
-		svg {
-			height: rem(32px);
-			pointer-events: auto;
-			fill: #00aa88;
-		}
-	}
+  &__logo {
+    grid-column-start: 1;
+    padding-left: rem(16px);
+    display: flex;
+    pointer-events: none;
+    svg {
+      height: rem(32px);
+      pointer-events: auto;
+      fill: #00aa88;
+    }
+  }
 
-	&__buttons {
-		display: flex;
-		gap: rem(8px);
-		grid-column-start: 4;
-		& > :last-child {
-			display: none;
-		}
-	}
+  &__buttons {
+    display: flex;
+    gap: rem(8px);
+    grid-column-start: 4;
+    & > :last-child {
+      display: none;
+    }
+  }
 
-	&__navigation {
-		grid-column-start: 8;
-		grid-column-end: span 4;
-		overflow-x: visible;
-		white-space: nowrap;
-		display: flex;
-		font-size: rem(18px);
-		gap: rem(32px);
-		font-weight: 400;
-		line-height: normal;
-	}
+  &__navigation {
+    grid-column-start: 8;
+    grid-column-end: span 4;
+    overflow-x: visible;
+    white-space: nowrap;
+    display: flex;
+    gap: rem(32px);
 
-	&__contact {
-		grid-column-start: 12;
-		grid-column-end: -1;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding-left: rem(60px);
-	}
+    color: var(--, #364a46);
+    font-family: Rubik;
+    font-size: rem(18px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 
-	@media #{media('<',d)} {
-		align-items: center;
-		grid-template-columns: repeat(4, 1fr);
-		& > * {
-			grid-column-end: span 1;
-		}
-		&__logo {
-			svg {
-				height: rem(18px);
-			}
-		}
-		&__buttons {
-			grid-column-start: 3;
-			grid-column-end: span 2;
-			justify-content: flex-end;
-			& > :last-child {
-				display: inline-flex;
-			}
-		}
-		&__navigation {
-			display: none;
-		}
-		&__contact {
-			display: none;
-		}
-	}
+  &__contact {
+    grid-column-start: 12;
+    grid-column-end: -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: rem(60px);
+  }
 
-	@media #{media('<',m)} {
-		border-radius: rem(12px);
+  @media #{media('<',d)} {
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    & > * {
+      grid-column-end: span 1;
+    }
+    &__logo {
+      svg {
+        height: rem(18px);
+      }
+    }
+    &__buttons {
+      grid-column-start: 3;
+      grid-column-end: span 2;
+      justify-content: flex-end;
+      & > :last-child {
+        display: inline-flex;
+      }
+    }
+    &__navigation {
+      display: none;
+    }
+    &__contact {
+      display: none;
+    }
+  }
 
-		&__burger-menu {
-			display: inline-flex;
-		}
-		&__logo {
-			grid-column-start: 2;
-			grid-column-end: span 2;
-			justify-content: center;
-		}
-		&__buttons {
-			grid-column-start: 4;
-			grid-column-end: span 1;
-		}
-		&__buttons > *:last-child,
-		&__buttons > *:first-child {
-			display: none;
-		}
-	}
+  @media #{media('<',m)} {
+    border-radius: rem(12px);
+
+    &__burger-menu {
+      display: inline-flex;
+    }
+    &__logo {
+      grid-column-start: 2;
+      grid-column-end: span 2;
+      justify-content: center;
+    }
+    &__buttons {
+      grid-column-start: 4;
+      grid-column-end: span 1;
+    }
+    &__buttons > *:last-child,
+    &__buttons > *:first-child {
+      display: none;
+    }
+  }
+
+  & address {
+    color: var(--, #364a46);
+    text-align: right;
+    font-family: Rubik;
+    font-size: rem(18px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
 }

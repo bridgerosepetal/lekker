@@ -23,10 +23,10 @@ block content
 
         +contact-card("<h5>Отдел рекламы</h5>", "", [{text: "reklama@lekker.ru", href: "mailto:reklama@lekker.ru"}], "_sandy")
       div(
-        class='mt-[10px] flex items-center justify-end gap-[21px] tablet:flex-col tablet:items-start tablet:gap-3 m:mt-12'
+        class='mt-[10px] flex items-center justify-end gap-[21px] tablet:flex-col tablet:items-start tablet:gap-3 m:mt-12 m:flex-col m:items-start m:gap-3'
       )
-        h5(class='basis-[600px] tablet:basis-auto') Мы в социальных сетях
-        div(class='flex tablet:gap-3 m:gap-[19px]')
+        h5(class='basis-[600px] tablet:basis-auto m:basis-auto') Мы в социальных сетях
+        div(class='flex gap-[21px] tablet:gap-3 m:gap-[19px]')
           +big-social-button("_youtube")
             +youtube
           +big-social-button("_vk")
@@ -35,7 +35,8 @@ block content
             +odnoklassniki
       +location-showcase(class='mt-6 m:mt-12')
         +location-card("<h5>Офис</h5>", "194044, Санкт-петербург, Беловодский переулок, 6", "пн-пт: 9–17:30", "_green")
-        +location-card("<h5>Офис</h5>", "194044, Санкт-петербург, Беловодский переулок, 6", "пн-пт: 9–17:30", "_blue")
+        +location-card("<h5>Производство</h5>", "194044, Санкт-Петербург, пер. Зеленков, 6, лит. А, корп. 1, пом. 11", "пн-пт: 9–17:30", "_blue")
         div(
-          class='col-span-3 row-span-2 rounded-3xl border-[2px] border-[#F0F0F0] bg-[url(../../public/images/map.png)] bg-cover'
+          class='m:bg- col-span-3 row-span-2 rounded-3xl border-[2px] border-[#F0F0F0] bg-[url(../../public/images/map.png)] bg-cover m:bg-cover m:bg-center'
         )
+      +contact-form("<h2>Связаться с нами</h2>")(class='mt-32 tablet:mt-12 m:mt-12')

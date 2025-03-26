@@ -3,87 +3,92 @@
 // needs a modifier that makes it grow horizontally to 100% (for the form button)
 
 .button {
-	display: inline-flex;
-	padding: 0;
-	background-color: $primary;
-	border-radius: rem(16px);
-	align-items: center;
-	vertical-align: middle;
+  display: inline-flex;
+  padding: 0;
+  background-color: $primary;
+  border-radius: rem(16px);
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	font-size: rem(18px);
-	font-family: Rubik;
-	color: #fff;
-	font-weight: 500;
-	text-transform: none;
-	line-height: normal;
+  font-size: rem(18px);
+  font-family: Rubik;
+  color: #fff;
+  font-weight: 500;
+  text-transform: none;
+  line-height: normal;
 
-	padding: rem(25px) rem(24px);
+  padding: rem(25px) rem(24px);
 
-	transition: $transition;
+  transition: $transition;
 
-	&_primary {
-		gap: rem(16px);
-		padding: rem(25px) rem(24px);
+  &_full {
+    width: 100%;
+  }
 
-		&:hover {
-			background-color: $primary-hover;
-		}
-	}
+  &_primary {
+    gap: rem(16px);
+    padding: rem(25px) rem(24px);
 
-	&_text-padding {
-		padding-inline: rem(32px);
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
 
-		@media #{media('<',d)} {
-			paddin-inline: rem(24px);
-		}
-	}
+  &_text-padding {
+    padding-inline: rem(32px);
 
-	&_secondary {
-		background: #f3f3f3;
-		color: #364a46;
-		padding: rem(25px);
-		svg {
-			width: rem(24px);
-			height: rem(24px);
+    @media #{media('<',d)} {
+      paddin-inline: rem(24px);
+    }
+  }
 
-			@media #{media('<',d)} {
-				width: rem(16px);
-				height: rem(16px);
-			}
+  &_secondary {
+    background: #f3f3f3;
+    color: #364a46;
+    padding: rem(25px);
+    svg {
+      width: rem(24px);
+      height: rem(24px);
 
-			@media #{media('<',xs)} {
-				padding: rem(14px);
-			}
-		}
-	}
+      @media #{media('<',d)} {
+        width: rem(16px);
+        height: rem(16px);
+      }
 
-	&_square {
-		aspect-ratio: 1 / 1;
-	}
+      @media #{media('<',xs)} {
+        padding: rem(14px);
+      }
+    }
+  }
 
-	svg {
-		width: rem(24px);
-		height: rem(24px);
-	}
+  &_square {
+    aspect-ratio: 1 / 1;
+  }
 
-	@media #{media('<',d)} {
-		border-radius: rem(8px);
-		font-size: rem(12px);
-		padding: rem(14px) rem(12px);
+  svg {
+    width: rem(24px);
+    height: rem(24px);
+  }
 
-		&_primary {
-			gap: rem(8px);
-		}
+  @media #{media('<',d)} {
+    border-radius: rem(8px);
+    font-size: rem(12px);
+    padding: rem(14px) rem(12px);
 
-		&_text-padding {
-			padding-inline: rem(12px);
-		}
+    &_primary {
+      gap: rem(8px);
+    }
 
-		svg {
-			width: rem(16px);
-			height: rem(16px);
-		}
-	}
+    &_text-padding {
+      padding-inline: rem(12px);
+    }
+
+    svg {
+      width: rem(16px);
+      height: rem(16px);
+    }
+  }
 }

@@ -1,48 +1,53 @@
 .big-social-button {
-	--_accent: var(--accent, #f0f0f0);
+  --_accent: var(--accent, #f0f0f0);
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-	box-sizing: border-box;
+  box-sizing: border-box;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	width: rem(399px);
+  width: rem(399px);
 
-	aspect-ratio: 1;
-	border-radius: 100%;
-	border: rem(2px) solid #f0f0f0;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  border: rem(2px) solid #f0f0f0;
 
-	transition: $transition;
+  transition: $transition;
 
-	@media #{media('<',d)} {
-		width: rem(240px);
-	}
+  @media #{media('<',d)} {
+    width: rem(240px);
+  }
 
-	@media #{media('<',m)} {
-		width: rem(104px);
-	}
+  @media #{media('<',m)} {
+    width: rem(104px);
+  }
 
-	@include media-hover {
-		box-shadow: inset 0 0 0 rem(12px) var(--accent, #f0f0f0);
-	}
+  @include media-hover {
+    box-shadow: inset 0 0 0 rem(12px) var(--accent, #f0f0f0);
+    border: none;
+  }
 
-	svg {
-		fill: var(--accent, #f0f0f0);
-		width: rem(66px);
-	}
+  svg {
+    fill: var(--accent, #f0f0f0);
+    width: rem(66px);
 
-	&_youtube {
-		--accent: #f00;
-	}
+    @media #{media('<',d)} {
+      width: rem(28px);
+    }
+  }
 
-	&_vk {
-		--accent: #07f;
-	}
+  &_youtube {
+    --accent: #f00;
+  }
 
-	&_odnoklassniki {
-		--accent: #f7931e;
-	}
+  &_vk {
+    --accent: #07f;
+  }
+
+  &_odnoklassniki {
+    --accent: #f7931e;
+  }
 }

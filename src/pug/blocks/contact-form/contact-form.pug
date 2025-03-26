@@ -1,0 +1,27 @@
+mixin contact-form(title, mods)
+  -
+    const baseName = 'contact-form'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .contact-form(class=allMods)&attributes(attributes)
+    form
+      .contact-form__squiggy-shape
+        img(src='../../../public/images/squiggy-shape.png')
+      .contact-form__squiggy-heart
+        img(src='../../../public/images/squiggy-heart.png')
+      .contact-form__head!= title
+      input(type='text')(placeholder='Ваше имя')(data-validate='text')(data-error-message='')
+      input(type='email')(placeholder='E-mail')(data-validate='email')(data-error-message='')
+      input(type='tel')(placeholder='Телефон')(data-validate='tel')(data-mask-phone='')
+      textarea(name='', cols='30', rows='6')(placeholder='Сообщение')(data-error-message='')
+      span(data-error-container='')(class='text-red-400')
+      .contact-form__bottom-panel
+        span Нажимая на кнопку «Отправить» я даю согласие на условия #[a(class='inline cursor-pointer text-[#0A8]') политики в отношении обработки персональных данных]
+        button Отправить

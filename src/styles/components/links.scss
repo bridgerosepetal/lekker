@@ -1,25 +1,30 @@
 .link {
-	color: var(--, #364a46);
-	font-family: Rubik;
-	font-size: rem(18px);
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	position: relative;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
 
-	@include media-hover {
-		&:after {
-			content: '';
-			display: block;
-			position: absolute;
-			bottom: rem(-4px);
-			background-color: #364a46;
-			width: 100%;
-			height: rem(2px);
-		}
-	}
+  &::after {
+    content: '';
+    transform: scaleX(0);
+    transform-origin: left;
+  }
 
-	&_semibold {
-		font-weight: 500;
-	}
+  @include media-hover {
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: rem(-4px);
+      background-color: currentColor;
+      width: 100%;
+      height: rem(2px);
+      transition: $transition;
+      transition-property: transform;
+      transform: scaleX(1);
+    }
+  }
+
+  &_semibold {
+    font-weight: 500;
+  }
 }

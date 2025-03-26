@@ -145,22 +145,19 @@
 
   &__policy {
     grid-area: policy;
-    color: var(--, #364a46);
-    font-family: Rubik;
-    font-size: rem(16px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%; /* 19.2px */
+
+    & a {
+      color: var(--, #364a46);
+      font-family: Rubik;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 19.2px */
+    }
 
     @media #{media('<',d)} {
       margin-top: rem(36px);
-
-      color: var(--, #364a46);
-      font-family: Rubik;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 120%; /* 14.4px */
+      font-size: rem(12px);
     }
 
     @media #{media('<',m)} {
@@ -184,11 +181,7 @@
 
     @media #{media('<',d)} {
       color: var(--, #364a46);
-      font-family: 'TT Firs Neue';
       font-size: rem(16px);
-      font-style: normal;
-      font-weight: 600;
-      line-height: 90%; /* 14.4px */
       letter-spacing: rem(-0.32px);
     }
 
@@ -227,19 +220,20 @@
   }
 
   &__made-in {
+    color: var(--, #364a46);
+    color: var(--, #364a46);
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
     grid-area: made-in;
     display: flex;
     justify-content: flex-end;
     padding-bottom: rem(48px);
 
     @media #{media('<',d)} {
-      color: var(--, #364a46);
-      font-family: Rubik;
       font-size: rem(12px);
-      font-style: normal;
-      font-weight: 400;
-      line-height: 120%; /* 14.4px */
-
       margin-top: rem(12px);
     }
 
@@ -257,14 +251,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     width: rem(74px);
     height: rem(74px);
     padding: rem(20px);
     border: solid rem(2px) #ececec;
     border-radius: rem(16px);
+
     background-color: #fff;
+
     transition: $transition;
-    box-sizing: border-box;
 
     @media #{media('<',d)} {
       width: rem(48px);
