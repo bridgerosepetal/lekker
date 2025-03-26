@@ -9,11 +9,15 @@
 	position: relative;
 	overflow: hidden;
 
-	@media #{media('<',xxl)} {
+	@media #{media('<',d)} {
 		padding: rem(24px);
 		width: unset;
 		min-width: rem(366px);
 		gap: rem(24px);
+	}
+
+	@media #{media('<',m)} {
+		min-width: rem(351px);
 	}
 
 	& > * {
@@ -29,7 +33,7 @@
 		font-weight: 400;
 		line-height: normal;
 
-		@media #{media('<',xxl)} {
+		@media #{media('<',d)} {
 			font-size: rem(16px);
 			text-shadow: none;
 		}
@@ -47,7 +51,7 @@
 	&__description {
 		width: rem(400px);
 
-		@media #{media('<',xxl)} {
+		@media #{media('<',d)} {
 			width: rem(261px);
 		}
 	}
@@ -72,7 +76,7 @@
 			align-items: center;
 		}
 
-		@media #{media('<',xxl)} {
+		@media #{media('<',d)} {
 			font-size: rem(16px);
 			line-height: 130%; /* 20.8px */
 			flex-basis: rem(38px);

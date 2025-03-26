@@ -1,16 +1,19 @@
 @use 'sass:map';
 
 :root {
-  --primary: #dd5799;
-  --primary-hover: #c7397f;
-  --primary1: teal;
-  --pink: #ffc0cb;
+	--primary: #dd5799;
+	--primary-hover: #c7397f;
+	--primary1: teal;
+	--pink: #ffc0cb;
 
-  // fonts
-  --font: 'Roboto', 'Arial', sans-serif;
-  --black: #0c0c0c;
-  // colors
-  --background1: #f2f2f2;
+	// fonts
+	--font: 'Roboto', 'Arial', sans-serif;
+	--black: #0c0c0c;
+	// colors
+	--background1: #f2f2f2;
+
+	--accent-green: #0a8;
+	--accent-blue: #0097d4;
 }
 
 // fonts
@@ -23,11 +26,11 @@ $primary-hover: var(--primary-hover);
 $primary1: var(--primary1);
 $pink: var(--pink);
 $colors: (
-  black: #000000
+	black: #000000
 );
 
 @function color($variant: black) {
-  @return map.get($colors, $variant);
+	@return map.get($colors, $variant);
 }
 
 // media

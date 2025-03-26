@@ -1,0 +1,14 @@
+mixin location-showcase(mods)
+  -
+    const baseName = 'location-showcase'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .location-showcase(class=allMods)&attributes(attributes)
+    block

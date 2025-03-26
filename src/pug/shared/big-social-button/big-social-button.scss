@@ -5,6 +5,8 @@
 	justify-content: center;
 	align-items: center;
 
+	box-sizing: border-box;
+
 	cursor: pointer;
 
 	width: rem(399px);
@@ -15,9 +17,16 @@
 
 	transition: $transition;
 
+	@media #{media('<',d)} {
+		width: rem(240px);
+	}
+
+	@media #{media('<',m)} {
+		width: rem(104px);
+	}
+
 	@include media-hover {
-		border-width: rem(12px);
-		border-color: var(--accent, #f0f0f0);
+		box-shadow: inset 0 0 0 rem(12px) var(--accent, #f0f0f0);
 	}
 
 	svg {

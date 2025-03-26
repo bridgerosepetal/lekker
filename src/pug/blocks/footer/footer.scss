@@ -1,165 +1,319 @@
 .footer {
-	display: grid;
-	column-gap: rem(24px);
-	grid-template-columns: repeat(16, 1fr);
-	grid-template-areas:
-		'. logo logo . navigation navigation navigation . contacts contacts . . action-call action-call action-call .'
-		'. mascot mascot . navigation navigation navigation . socials socials . . action-call action-call action-call .'
-		'. mascot mascot . navigation navigation navigation . socials socials . . . . . .'
-		'. copyright copyright . policy policy policy policy . . . . made-in made-in made-in . '
-		'disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer';
+  display: grid;
+  column-gap: rem(24px);
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-areas:
+    '. logo logo . navigation navigation navigation . contacts contacts . . action-call action-call action-call .'
+    '. mascot mascot . navigation navigation navigation . socials socials socials . action-call action-call action-call .'
+    '. mascot mascot . navigation navigation navigation . socials socials socials . . . . .'
+    '. copyright copyright . policy policy policy policy . . . . made-in made-in made-in . '
+    'disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer';
 
-	padding-inline: rem(24px);
-	padding-top: rem(80px);
-	overflow: visible;
+  padding-inline: rem(24px);
+  padding-top: rem(80px);
+  overflow: hidden;
 
-	background-color: #f3f3f3;
-	color: #364a46;
+  background-color: #f3f3f3;
+  color: #364a46;
 
-	&__background {
-		grid-column-start: 1;
-		grid-column-end: span 16;
-		grid-row-start: 1;
-		grid-row-end: span 4;
+  @media #{media('<',d)} {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'navigation .  contacts mascot'
+      'socials socials . action-call'
+      'policy policy . .'
+      'copyright . . .'
+      'made-in . . .'
+      'disclaimer disclaimer disclaimer disclaimer';
+    column-gap: rem(12px);
+    padding-inline: rem(12px);
+  }
 
-		background-image: url(../../public/images/squiggy-footer.png);
-		background-repeat: no-repeat;
-		background-position: bottom right;
-		margin-inline: rem(-24px);
-		background-size: 40%;
-	}
+  @media #{media('<',m)} {
+    grid-template-areas:
+      'navigation navigation mascot mascot'
+      'contacts contacts action-call action-call'
+      'socials socials socials socials'
+      'policy policy policy policy'
+      'copyright copyright copyright copyright'
+      'made-in made-in made-in made-in'
+      'disclaimer disclaimer disclaimer disclaimer';
+  }
 
-	&__logo {
-		grid-area: logo;
-		svg {
-			height: rem(32px);
-			fill: #364a46;
-		}
-	}
+  &__background {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -2;
 
-	&__mascot {
-		grid-area: mascot;
-		margin-block: rem(60px);
-	}
+    background-image: url('../../public/images/squiggy-footer.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    margin-inline: rem(-24px);
+    background-size: 40%;
 
-	&__copyright {
-		grid-area: copyright;
-		font-family: Rubik;
-		font-size: rem(14px);
-		font-style: normal;
-		font-weight: 400;
-		line-height: 120%; /* 16.8px */
-		color: hsl(168, 15.63%, 25.1% / 0.7);
-	}
+    @media #{media('<',d)} {
+      background-image: url('../../public/images/squiggy-footer2.png');
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      background-size: 100%;
+    }
 
-	&__navigation {
-		grid-area: navigation;
-		& > ul > li {
-			color: var(--, #364a46);
-			font-family: 'TT Firs Neue';
-			font-size: 40px;
-			font-style: normal;
-			font-weight: 600;
-			line-height: 90%; /* 36px */
-			letter-spacing: -0.8px;
-		}
+    @media #{media('<',m)} {
+      background-size: 200%;
+    }
+  }
 
-		& > ul > li:not(:first-child) {
-			margin-top: rem(24px);
-		}
-	}
+  &__logo {
+    grid-area: logo;
+    svg {
+      height: rem(32px);
+      fill: #364a46;
+    }
 
-	&__policy {
-		grid-area: policy;
-		color: var(--, #364a46);
-		font-family: Rubik;
-		font-size: rem(16px);
-		font-style: normal;
-		font-weight: 400;
-		line-height: 120%; /* 19.2px */
-	}
+    @media #{media('<',d)} {
+      display: none;
+    }
+  }
 
-	&__contacts {
-		grid-area: contacts;
-		color: var(--, #364a46);
-		font-family: 'TT Firs Neue';
-		font-size: rem(24px);
-		font-style: normal;
-		font-weight: 600;
-		line-height: 90%; /* 21.6px */
-		letter-spacing: rem(-0.48px);
+  &__mascot {
+    grid-area: mascot;
+    margin-block: rem(60px);
 
-		& > ul > li:not(:first-child) {
-			margin-top: rem(12px);
-		}
-	}
+    @media #{media('<',d)} {
+      margin-block: unset;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      margin-right: rem(18px);
+      img {
+        width: rem(80px);
+      }
+    }
+  }
 
-	&__socials {
-		grid-area: socials;
-		margin-top: rem(86px);
-		display: grid;
-		grid-auto-flow: column;
-		gap: rem(8px);
-	}
+  &__copyright {
+    grid-area: copyright;
+    font-family: Rubik;
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 16.8px */
+    color: hsl(168, 15.63%, 25.1% / 0.7);
 
-	&__action-call {
-		grid-area: action-call;
-		display: flex;
-		justify-content: flex-end;
-		align-items: flex-start;
-	}
+    @media #{media('<',d)} {
+      color: var(--, #364a46);
+      font-family: Rubik;
+      font-size: rem(12px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 14.4px */
 
-	&__made-in {
-		grid-area: made-in;
-		display: flex;
-		justify-content: flex-end;
-		padding-bottom: rem(48px);
+      margin-top: rem(12px);
+    }
+  }
 
-		& > * {
-			flex-basis: rem(218px);
-		}
-	}
+  &__navigation {
+    grid-area: navigation;
+    & > ul > li {
+      color: var(--, #364a46);
+      font-family: 'TT Firs Neue';
+      font-size: rem(40px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 90%; /* 36px */
+      letter-spacing: rem(-0.8px);
 
-	&__social-box {
-		aspect-ratio: 1;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: rem(74px);
-		border: solid rem(2px) #ececec;
-		border-radius: rem(16px);
-		background-color: #fff;
-		transition: $transition;
+      @media #{media('<',d)} {
+        color: var(--, #364a46);
+        font-family: 'TT Firs Neue';
+        font-size: rem(24px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 90%; /* 21.6px */
+        letter-spacing: rem(-0.48px);
+      }
+    }
 
-		svg {
-			fill: #364a46;
-			width: rem(30px);
-			height: rem(30px);
-		}
+    & > ul > li:not(:first-child) {
+      margin-top: rem(24px);
+      @media #{media('<',d)} {
+        margin-top: rem(12px);
+      }
+    }
+  }
 
-		@include media-hover {
-			background-color: #fdfdfd;
-			box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
-		}
-	}
+  &__policy {
+    grid-area: policy;
+    color: var(--, #364a46);
+    font-family: Rubik;
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
 
-	&__disclaimer {
-		grid-area: disclaimer;
-		padding-top: rem(45px);
-		padding-bottom: rem(48px);
-		background-color: #fff;
-		margin-inline: rem(-24px);
-		display: flex;
-		justify-content: center;
-		align-items: center;
+    @media #{media('<',d)} {
+      margin-top: rem(36px);
 
-		color: rgba(0, 0, 0, 0.15);
-		text-align: center;
-		font-family: Rubik;
-		font-size: rem(37px);
-		font-style: normal;
-		font-weight: 400;
-		line-height: 120%; /* 44.4px */
-		letter-spacing: rem(-1.48px);
-	}
+      color: var(--, #364a46);
+      font-family: Rubik;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 14.4px */
+    }
+
+    @media #{media('<',m)} {
+      margin-top: rem(32px);
+    }
+  }
+
+  &__contacts {
+    grid-area: contacts;
+    color: var(--, #364a46);
+    font-family: 'TT Firs Neue';
+    font-size: rem(24px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90%; /* 21.6px */
+    letter-spacing: rem(-0.48px);
+
+    & > ul > li:not(:first-child) {
+      margin-top: rem(12px);
+    }
+
+    @media #{media('<',d)} {
+      color: var(--, #364a46);
+      font-family: 'TT Firs Neue';
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 90%; /* 14.4px */
+      letter-spacing: rem(-0.32px);
+    }
+
+    @media #{media('<',m)} {
+      margin-top: rem(32px);
+    }
+  }
+
+  &__socials {
+    grid-area: socials;
+    margin-top: rem(86px);
+    display: inline-grid;
+    grid-auto-flow: column;
+    gap: rem(8px);
+    justify-content: start;
+
+    @media #{media('<',d)} {
+      gap: rem(4px);
+      margin-top: rem(36px);
+    }
+
+    @media #{media('<',m)} {
+      margin-top: rem(39px);
+    }
+  }
+
+  &__action-call {
+    grid-area: action-call;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    @media #{media('<',d)} {
+      margin-top: rem(20px);
+    }
+  }
+
+  &__made-in {
+    grid-area: made-in;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: rem(48px);
+
+    @media #{media('<',d)} {
+      color: var(--, #364a46);
+      font-family: Rubik;
+      font-size: rem(12px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 14.4px */
+
+      margin-top: rem(12px);
+    }
+
+    @media #{media('<',m)} {
+      justify-content: flex-start;
+      padding-bottom: rem(32px);
+    }
+
+    & > * {
+      flex-basis: rem(218px);
+    }
+  }
+
+  &__social-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(74px);
+    height: rem(74px);
+    padding: rem(20px);
+    border: solid rem(2px) #ececec;
+    border-radius: rem(16px);
+    background-color: #fff;
+    transition: $transition;
+    box-sizing: border-box;
+
+    @media #{media('<',d)} {
+      width: rem(48px);
+      height: rem(48px);
+      padding: rem(12px);
+    }
+
+    svg {
+      fill: #364a46;
+    }
+
+    @include media-hover {
+      background-color: #fdfdfd;
+      box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &__disclaimer {
+    grid-area: disclaimer;
+    padding-top: rem(45px);
+    padding-bottom: rem(48px);
+    background-color: #fff;
+    margin-inline: rem(-24px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: Rubik;
+    font-size: rem(37px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 44.4px */
+    letter-spacing: rem(-1.48px);
+
+    @media #{media('<',d)} {
+      padding-block: rem(24px);
+      color: var(--, #364a46);
+      text-align: center;
+      font-family: Rubik;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 18px */
+      letter-spacing: -0.6px;
+      & p {
+        width: rem(351px);
+      }
+    }
+  }
 }

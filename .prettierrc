@@ -7,7 +7,7 @@
   "tailwindConfig": "tailwind.config.js",
   "printWidth": 100,
   "tabWidth": 2,
-  "useTabs": true,
+  "useTabs": false,
   "semi": false,
   "singleQuote": true,
   "quoteProps": "as-needed",

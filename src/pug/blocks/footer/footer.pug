@@ -1,42 +1,43 @@
 -
 footer.footer
-	.footer__background
-	.footer__logo
-		+logo
-	nav.footer__navigation
-		ul
-			li
-				a О компании
-			li
-				a Новости
-			li
-				a Контакты
-			li
-				a Где купить
-	.footer__mascot
-		img(src='../../public/images/mascot.png', width='134px')
-	.footer__policy Политика в отношении обработки персональных данных
-	.footer__socials
-		a.footer__social-box(href='https://vk.com')
-			+vk
-		a.footer__social-box(href='https://ok.com')
-			+odnoklassniki
-		a.footer__social-box(href='https://youtube.com')
-			+youtube
-		a.footer__social-box(href='https://rutube.ru')
-			+rutube
-	address.footer__contacts
-		ul
-			li
-				a 8 812 448-54-65
-			li
-				a info@lekker.ru
-	.footer__action-call
-		a
-			+button("_primary, _text-padding") Стать партнером
-	.footer__made-in
-		span
-			| Сделано в&nbsp;
-			span(class='ml-0 font-bold text-[#DD5799]') CloudMill
-	.footer__copyright © 2002-2023 ООО «Леккер»
-	.footer__disclaimer ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ
+  .footer__background
+  .footer__logo
+    +logo
+  nav.footer__navigation
+    ul
+      li
+        a(href='#') О компании
+      li
+        a(href='#') Новости
+      li
+        a(href='#') Контакты
+      li
+        a(href='#') Где купить
+  .footer__mascot
+    img(src='../../public/images/mascot.png', width='134px')
+  .footer__policy Политика в отношении обработки персональных данных
+  .footer__socials
+    a.footer__social-box(href='https://vk.com')
+      +vk
+    a.footer__social-box(href='https://ok.com')
+      +odnoklassniki
+    a.footer__social-box(href='https://youtube.com')
+      +youtube
+    a.footer__social-box(href='https://rutube.ru')
+      +rutube
+  address.footer__contacts
+    ul
+      li
+        a(href='tel:+78124485465') 8 812 448-54-65
+      li
+        a(href='mailto:info@lekker.ru') info@lekker.ru
+  .footer__action-call
+    a
+      +button("_primary, _text-padding") Стать партнером
+  .footer__made-in
+    span
+      | Сделано в&nbsp;
+      span(class='ml-0 font-bold text-[#DD5799]') CloudMill
+  .footer__copyright © 2002-2023 ООО «Леккер»
+  .footer__disclaimer
+    p ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ

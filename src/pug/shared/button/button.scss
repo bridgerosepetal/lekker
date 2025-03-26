@@ -35,7 +35,7 @@
 	&_text-padding {
 		padding-inline: rem(32px);
 
-		@media #{media('<',xxl)} {
+		@media #{media('<',d)} {
 			paddin-inline: rem(24px);
 		}
 	}
@@ -48,7 +48,7 @@
 			width: rem(24px);
 			height: rem(24px);
 
-			@media #{media('<',xxl)} {
+			@media #{media('<',d)} {
 				width: rem(16px);
 				height: rem(16px);
 			}
@@ -68,7 +68,7 @@
 		height: rem(24px);
 	}
 
-	@media #{media('<',xxl)} {
+	@media #{media('<',d)} {
 		border-radius: rem(8px);
 		font-size: rem(12px);
 		padding: rem(14px) rem(12px);

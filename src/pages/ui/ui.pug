@@ -2,31 +2,40 @@ extends ../../layout/layout
 include ../../pug/shared/svg/svg
 
 block variables
-	-
-		const pageName = 'ui'
-		const pageTitle = 'ui'
+  -
+    const pageName = 'ui'
+    const pageTitle = 'ui'
 
 block description
-	meta(name='description', content='Описание страницы Test')
+  meta(name='description', content='Описание страницы Test')
 
 block content
-	main.ui-page(data-barba='container', data-barba-namespace=pageName)
-		.inner
-			+breadcrumbs(class='mt-6')
-				+breadcrumbs-item("Главная","https://google.com")
-				+breadcrumbs-item("Контакты")
-			h1(class='mt-6') Контакты
-			div(class='mt-12 grid grid-cols-3 gap-6 xxl:grid-cols-2 m:grid-cols-1')
-				+contact-card("<h5>Секретарь</h5>", "Как стать умнее или избавиться от йододефицита", [{ text: "8 812 448-54-65", href: "tel:88124485465"}, {text: "help_gendir@lekker.ru", href: "mailto:help_gendir@lekker.ru"}], "_green")
+  main.ui-page(data-barba='container', data-barba-namespace=pageName)
+    .inner
+      +breadcrumbs(class='mt-6')
+        +breadcrumbs-item("Главная","https://google.com")
+        +breadcrumbs-item("Контакты")
+      h1(class='mt-6') Контакты
+      div(class='mt-12 grid grid-cols-3 gap-6 tablet:grid-cols-2 m:grid-cols-1 m:gap-3')
+        +contact-card("<h5>Секретарь</h5>", "Как стать умнее или избавиться от йододефицита", [{ text: "8 812 448-54-65", href: "tel:88124485465"}, {text: "help_gendir@lekker.ru", href: "mailto:help_gendir@lekker.ru"}], "_green")
 
-				+contact-card("<h5>Отдел продаж</h5>", "", [{text: "8 812 702-72-62", href: "tel:88127027262"}, {text: "prodazha@lekker.ru", href: "mailto:prodazha@lekker.ru"}], "_pink")
+        +contact-card("<h5>Отдел продаж</h5>", "", [{text: "8 812 702-72-62", href: "tel:88127027262"}, {text: "prodazha@lekker.ru", href: "mailto:prodazha@lekker.ru"}], "_pink")
 
-				+contact-card("<h5>Отдел рекламы</h5>", "", [{text: "reklama@lekker.ru", href: "mailto:reklama@lekker.ru"}], "_sandy")
-			div(class='mt-6 flex items-center justify-end gap-[21px]')
-				h5(class='basis-[600px]') Мы в социальных сетях
-				+big-social-button("_youtube")
-					+youtube
-				+big-social-button("_vk")
-					+vk
-				+big-social-button("_odnoklassniki")
-					+odnoklassniki
+        +contact-card("<h5>Отдел рекламы</h5>", "", [{text: "reklama@lekker.ru", href: "mailto:reklama@lekker.ru"}], "_sandy")
+      div(
+        class='mt-[10px] flex items-center justify-end gap-[21px] tablet:flex-col tablet:items-start tablet:gap-3 m:mt-12'
+      )
+        h5(class='basis-[600px] tablet:basis-auto') Мы в социальных сетях
+        div(class='flex tablet:gap-3 m:gap-[19px]')
+          +big-social-button("_youtube")
+            +youtube
+          +big-social-button("_vk")
+            +vk
+          +big-social-button("_odnoklassniki")
+            +odnoklassniki
+      +location-showcase(class='mt-6 m:mt-12')
+        +location-card("<h5>Офис</h5>", "194044, Санкт-петербург, Беловодский переулок, 6", "пн-пт: 9–17:30", "_green")
+        +location-card("<h5>Офис</h5>", "194044, Санкт-петербург, Беловодский переулок, 6", "пн-пт: 9–17:30", "_blue")
+        div(
+          class='col-span-3 row-span-2 rounded-3xl border-[2px] border-[#F0F0F0] bg-[url(../../public/images/map.png)] bg-cover'
+        )

@@ -65,7 +65,7 @@
 		padding-left: rem(60px);
 	}
 
-	@media #{media('<',xxl)} {
+	@media #{media('<',d)} {
 		align-items: center;
 		grid-template-columns: repeat(4, 1fr);
 		& > * {

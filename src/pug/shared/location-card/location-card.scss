@@ -1,0 +1,72 @@
+.location-card {
+	--_accent: var(--accent, rgb(170, 170, 170));
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	border-radius: rem(24px);
+	padding: rem(32px);
+
+	background-color: var(--_accent);
+	color: #fff;
+
+	@media #{media('<',d)} {
+		padding: rem(12px);
+	}
+
+	&__head {
+		display: flex;
+		flex-direction: column;
+		gap: rem(20px);
+
+		& > * {
+			color: #fff;
+		}
+
+		& > p {
+			margin-right: rem(16px);
+
+			color: var(--, #fff);
+			font-family: Rubik;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 160%; /* 28.8px */
+
+			@media #{media('<',d)} {
+				color: var(--, #fff);
+
+				/* Text 1 */
+				font-family: Rubik;
+				font-size: rem(12px);
+				font-style: normal;
+				font-weight: 400;
+				line-height: 130%; /* 15.6px */
+			}
+		}
+	}
+
+	&__schedule {
+		display: inline;
+		text-transform: uppercase;
+
+		@media #{media('<',d)} {
+			color: var(--, #fff);
+			font-family: Rubik;
+			font-size: rem(12px);
+			font-style: normal;
+			font-weight: 400;
+			line-height: 130%; /* 15.6px */
+			text-transform: uppercase;
+		}
+	}
+
+	&_green {
+		--accent: var(--accent-green);
+	}
+
+	&_blue {
+		--accent: var(--accent-blue);
+	}
+}

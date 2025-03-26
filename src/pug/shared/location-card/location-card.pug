@@ -1,0 +1,18 @@
+mixin location-card(title, address = '', schedule = '', mods)
+	-
+		const baseName = 'location-card'
+		let allMods = ''
+		if (typeof mods !== 'undefined' && mods) {
+			const modsList = mods.split(',')
+			for (const element of modsList) {
+				allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+			}
+			allMods = allMods.trim()
+		}
+
+	.location-card(class=allMods)&attributes(attributes)
+		.location-card__head
+			!= title
+			p= address
+		.location-card__schedule
+			p= schedule
