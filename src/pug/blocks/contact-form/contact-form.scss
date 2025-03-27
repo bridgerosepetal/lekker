@@ -38,6 +38,7 @@
         line-height: 130%; /* 15.6px */
         margin: 0;
         width: 100%;
+        //FIXME: убрать и добавить margin-top к футеру
         margin-bottom: rem(28px);
       }
     }
@@ -103,6 +104,8 @@
         padding: rem(16px);
         border-radius: rem(12px);
       }
+
+      //FIXME: добавить стили при наведении и активе
 
       &::placeholder {
         color: var(--, #364a46);

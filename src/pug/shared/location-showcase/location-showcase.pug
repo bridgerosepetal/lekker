@@ -10,5 +10,12 @@ mixin location-showcase(mods)
       allMods = allMods.trim()
     }
 
+  //FIXME: добавить section
   .location-showcase(class=allMods)&attributes(attributes)
-    block
+    +location-card("<h5>Офис</h5>", "194044, Санкт-петербург, Беловодский переулок, 6", "пн-пт: 9–17:30", "_green")
+    +location-card("<h5>Производство</h5>", "194044, Санкт-Петербург, пер. Зеленков, 6, лит. А, корп. 1, пом. 11", "пн-пт: 9–17:30", "_blue")
+    //FIXME: переделать на тег img
+    //FIXME: поправить радиусы на адаптиве
+    div(
+      class='m:bg- col-span-3 row-span-2 rounded-3xl border-[2px] border-[#F0F0F0] bg-[url(../../public/images/map.png)] bg-cover m:bg-cover m:bg-center'
+    )

@@ -9,15 +9,18 @@ mixin contact-form(title, mods)
       }
       allMods = allMods.trim()
     }
-
+  //FIXME: использовать компонент ui-input, проверить чтобы ошибка валидации поля была под самим полем. Написать стили для поля с ошибкой (красная обводка)
   .contact-form(class=allMods)&attributes(attributes)
     form
       .contact-form__squiggy-shape
+        //FIXME: использовать компонент picture
         img(src='../../../public/images/squiggy-shape.png')
       .contact-form__squiggy-heart
         img(src='../../../public/images/squiggy-heart.png')
       .contact-form__head!= title
-      input(type='text')(placeholder='Ваше имя')(data-validate='text')(data-error-message='')
+      input(type='text')(placeholder='Ваше имя')(data-validate='text')(data-error-message='')(
+        minlength=3
+      )
       input(type='email')(placeholder='E-mail')(data-validate='email')(data-error-message='')
       input(type='tel')(placeholder='Телефон')(data-validate='tel')(data-mask-phone='')
       textarea(name='', cols='30', rows='6')(placeholder='Сообщение')(data-error-message='')

@@ -1,14 +1,14 @@
 mixin button(mods)
-	-
-		const baseName = 'button'
-		let allMods = ''
-		if (typeof mods !== 'undefined' && mods) {
-		  const modsList = mods.split(',')
-		  for (const element of modsList) {
-		    allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-		  }
-		  allMods = allMods.trim()
-		}
+  -
+    const baseName = 'button'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
 
-	a.button(class=allMods)&attributes(attributes)
-		block
+  a.button(class=allMods)&attributes(attributes)
+    block

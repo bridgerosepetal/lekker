@@ -15,13 +15,22 @@ block content
       +breadcrumbs(class='mt-6')
         +breadcrumbs-item("Главная","https://google.com")
         +breadcrumbs-item("Контакты")
-      h1(class='mt-6') Контакты
-      div(class='mt-12 grid grid-cols-3 gap-6 tablet:grid-cols-2 m:grid-cols-1 m:gap-3')
-        +contact-card("<h5>Секретарь</h5>", "Как стать умнее или избавиться от йододефицита", [{ text: "8 812 448-54-65", href: "tel:88124485465"}, {text: "help_gendir@lekker.ru", href: "mailto:help_gendir@lekker.ru"}], "_green")
+      h1(class='mt-6 m:mt-3') Контакты
+      //FIXME: поправить margin-top для планшета
+      //FIXME: tablet поменять на d
+      //FIXME: вынести в отдельный компонент (придумать название )
+      div(class='mt-12 grid grid-cols-3 gap-6 tablet:grid-cols-2 m:mt-6 m:grid-cols-1 m:gap-3')
+        //FIXME: убрать теги из аргументов миксина
+        //FIXME: поправить gap на планшете
+        +contact-card("Секретарь", "Как стать умнее или избавиться от йододефицита", [{ text: "8 812 448-54-65", href: "tel:88124485465"}, {text: "help_gendir@lekker.ru", href: "mailto:help_gendir@lekker.ru"}], "_green")
 
         +contact-card("<h5>Отдел продаж</h5>", "", [{text: "8 812 702-72-62", href: "tel:88127027262"}, {text: "prodazha@lekker.ru", href: "mailto:prodazha@lekker.ru"}], "_pink")
 
         +contact-card("<h5>Отдел рекламы</h5>", "", [{text: "reklama@lekker.ru", href: "mailto:reklama@lekker.ru"}], "_sandy")
+      //FIXME: поправить margin-top на десктопе
+      //FIXME: убрать div
+      //FIXME: поменять местами youtube и vk
+      //FIXME: вынести в отдельный компонент socilas
       div(
         class='mt-[10px] flex items-center justify-end gap-[21px] tablet:flex-col tablet:items-start tablet:gap-3 m:mt-12 m:flex-col m:items-start m:gap-3'
       )
@@ -34,9 +43,6 @@ block content
           +big-social-button("_odnoklassniki")
             +odnoklassniki
       +location-showcase(class='mt-6 m:mt-12')
-        +location-card("<h5>Офис</h5>", "194044, Санкт-петербург, Беловодский переулок, 6", "пн-пт: 9–17:30", "_green")
-        +location-card("<h5>Производство</h5>", "194044, Санкт-Петербург, пер. Зеленков, 6, лит. А, корп. 1, пом. 11", "пн-пт: 9–17:30", "_blue")
-        div(
-          class='m:bg- col-span-3 row-span-2 rounded-3xl border-[2px] border-[#F0F0F0] bg-[url(../../public/images/map.png)] bg-cover m:bg-cover m:bg-center'
-        )
-      +contact-form("<h2>Связаться с нами</h2>")(class='mt-32 tablet:mt-12 m:mt-12')
+      //FIXME: убрать теги из аргументов миксина
+      //FIXME: tablet поменять на d
+      +contact-form("<h2>Связаться с нами</h2>")(class='mt-32 tablet:mt-12 m:mt-[4.625rem]')

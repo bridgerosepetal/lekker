@@ -14,7 +14,7 @@ mixin contact-card(title, description = '', contacts = '', mods)
 
   .contact-card(class=allMods)&attributes(attributes)
     .contact-card__head
-      .contact-card__title!= title
+      h5.contact-card__title!= title
       p.contact-card__description= description
     address.contact-card__contacts
       if Array.isArray(contacts)

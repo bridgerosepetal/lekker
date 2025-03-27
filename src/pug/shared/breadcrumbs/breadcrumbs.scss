@@ -1,39 +1,45 @@
 .breadcrumbs {
-	display: inline-flex;
-	align-items: center;
-	gap: rem(31px);
-	font-size: rem(16px);
-	font-family: TT Firs Neue;
-	font-style: normal;
-	font-weight: 600;
-	line-height: 90%; /* 14.4px */
-	text-transform: uppercase;
-	svg {
-		stroke: currentColor;
-		transform: translateY(rem(-1px));
-	}
+  display: inline-flex;
+  align-items: center;
+  gap: rem(31px);
+  font-size: rem(16px);
+  font-family: TT Firs Neue;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%; /* 14.4px */
+  text-transform: uppercase;
 
-	&__item {
-		position: relative;
+  //FIXME: поправить gap на адаптиве
+  //FIXME: добавить transition
 
-		display: inline-flex;
-		white-space: nowrap;
-		color: #575757;
-	}
+  svg {
+    stroke: currentColor;
+    transform: translateY(rem(-1px));
+  }
 
-	&__link {
-		display: inline-flex;
-		gap: rem(8px);
-		cursor: pointer;
+  &__item {
+    position: relative;
 
-		@include media-hover {
-			color: #0a8;
-		}
-	}
+    display: inline-flex;
+    white-space: nowrap;
+    color: #575757;
+  }
 
-	&__text {
-		display: inline-flex;
-		gap: rem(8px);
-		color: #0a8;
-	}
+  &__link {
+    display: inline-flex;
+    gap: rem(8px);
+    cursor: pointer;
+    align-items: center;
+
+    @include media-hover {
+      color: #0a8;
+    }
+  }
+
+  &__text {
+    display: inline-flex;
+    gap: rem(8px);
+    color: #0a8;
+    align-items: center;
+  }
 }

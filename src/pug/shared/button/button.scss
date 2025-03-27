@@ -1,8 +1,10 @@
 // button for text or icon + text
 // second padding variant is text-padding, may rename to "bloated-padding" or "cushion"
-// needs a modifier that makes it grow horizontally to 100% (for the form button)
 
 .button {
+  //FIXME: убрать из компонентов, использовать глобальные переменные (проверить во всех компонентах)
+  --_font: var(--font, 'Rubik', 'Arial', sans-serif);
+
   display: inline-flex;
   padding: 0;
   background-color: $primary;
@@ -14,7 +16,7 @@
   cursor: pointer;
 
   font-size: rem(18px);
-  font-family: Rubik;
+  font-family: $font;
   color: #fff;
   font-weight: 500;
   text-transform: none;
@@ -32,11 +34,19 @@
     gap: rem(16px);
     padding: rem(25px) rem(24px);
 
-    &:hover {
-      background-color: $primary-hover;
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: $primary-hover;
+      }
     }
+
+    // &:hover {
+    //   background-color: $primary-hover;
+    // }
   }
 
+  //FIXME: поправить имя класса на _p-32
+  //FIXME: поправить таким образом везде классы
   &_text-padding {
     padding-inline: rem(32px);
 

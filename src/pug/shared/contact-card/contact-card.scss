@@ -1,19 +1,27 @@
 .contact-card {
-  padding: rem(32px);
+  --_text: var(--text, #364a46);
+
   display: flex;
   flex-direction: column;
-  gap: rem(99px);
-  width: rem(608px);
-  border-radius: rem(24px);
   justify-content: space-between;
+  gap: rem(99px);
+
   position: relative;
+  padding: rem(32px);
+  width: rem(608px);
   overflow: hidden;
+  border-radius: rem(24px);
+
+  background-size: cover;
 
   @media #{media('<',d)} {
+    gap: rem(24px);
+
     padding: rem(24px);
     width: unset;
     min-width: rem(366px);
-    gap: rem(24px);
+
+    background-position: bottom 0px right 0px;
   }
 
   @media #{media('<',m)} {
@@ -25,7 +33,7 @@
   }
 
   p {
-    color: var(--, #364a46);
+    color: var(--_text, #364a46);
     text-shadow: 0px rem(4px) rem(4px) rgba(0, 0, 0, 0.25);
     font-family: Rubik;
     font-size: rem(24px);
@@ -63,12 +71,14 @@
 
     flex-basis: rem(77px);
 
-    color: var(--, #364a46);
+    color: var(--_text, #364a46);
     font-family: Rubik;
     font-size: rem(24px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    //FIXME: поправить gap на планшете
 
     a {
       display: inline-flex;
@@ -101,14 +111,9 @@
     background-color: #d2f6ec;
 
     background-image: url('../../public/images/squiggy-long.png');
-    background-size: cover;
 
     & .contact-card__contact-icon {
       stroke: #00aa88;
-    }
-
-    @media #{media('<',d)} {
-      background-position: bottom 0px right 0px;
     }
   }
 
@@ -116,14 +121,9 @@
     background-color: #fde0ed;
 
     background-image: url('../../public/images/squiggy-round.png');
-    background-size: cover;
 
     & .contact-card__contact-icon {
       stroke: #dd5799;
-    }
-
-    @media #{media('<',d)} {
-      background-position: bottom 0px right 0px;
     }
   }
 
@@ -131,14 +131,9 @@
     background-color: #ffeed2;
 
     background-image: url('../../public/images/squiggy-hearts.png');
-    background-size: cover;
 
     & .contact-card__contact-icon {
       stroke: #fbbd20;
-    }
-
-    @media #{media('<',d)} {
-      background-position: bottom 0px right 0px;
     }
 
     @media #{media('<',m)} {

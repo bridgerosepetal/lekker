@@ -1,34 +1,37 @@
 .icon-button {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	aspect-ratio: 1;
-	cursor: pointer;
-	padding: rem(25px);
-	background-color: #f3f3f3;
-	border-radius: rem(16px);
-	transition: $transition;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  cursor: pointer;
+  padding: rem(25px);
+  background-color: #f3f3f3;
+  border-radius: rem(16px);
+  transition: $transition;
 
-	&_primary {
-		background-color: #dd5799;
-	}
+  &_primary {
+    background-color: #dd5799;
+  }
 
-	@media #{media('<',d)} {
-		padding: rem(14px);
-		border-radius: rem(8px);
-	}
+  @media #{media('<',d)} {
+    padding: rem(14px);
+    border-radius: rem(8px);
+  }
 
-	svg {
-		width: rem(24px);
-		height: rem(24px);
+  svg {
+    width: rem(24px);
+    height: rem(24px);
 
-		@media #{media('<',d)} {
-			width: rem(16px);
-			height: rem(16px);
-		}
-	}
+    @media #{media('<',d)} {
+      width: rem(16px);
+      height: rem(16px);
+    }
+  }
 
-	@include media-hover {
-		background-color: gray;
-	}
+  //FIXME: поправить цвет и использовать другое media для наведения
+  //FIXME: заменить во всех файлах @include media-hover на то, что снизу
+  // @media #{media('>',t)} and (hover: hover) and (pointer: fine) {&:hover {}}
+  @include media-hover {
+    background-color: gray;
+  }
 }
