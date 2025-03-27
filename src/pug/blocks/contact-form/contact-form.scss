@@ -34,7 +34,7 @@
       @media #{media('<',d)} {
         font-size: rem(12px);
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         line-height: 130%; /* 15.6px */
         margin: 0;
         width: 100%;
@@ -71,8 +71,10 @@
       padding: rem(16px) rem(24px);
     }
 
-    &:hover {
-      background-color: $primary-hover;
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: $primary-hover;
+      }
     }
   }
 
@@ -106,15 +108,13 @@
         border-radius: rem(12px);
       }
 
-      //FIXME: добавить стили при наведении и активе
-
       &::placeholder {
         color: var(--, #364a46);
         opacity: 0.5;
         font-family: Rubik;
         font-size: rem(20px);
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         line-height: normal;
 
         @media #{media('<',d)} {

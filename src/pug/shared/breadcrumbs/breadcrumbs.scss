@@ -9,8 +9,9 @@
   line-height: 90%; /* 14.4px */
   text-transform: uppercase;
 
-  //FIXME: поправить gap на адаптиве
-  //FIXME: добавить transition
+  @media #{media('<',d)} {
+    gap: rem(12px);
+  }
 
   svg {
     stroke: currentColor;
@@ -30,9 +31,12 @@
     gap: rem(8px);
     cursor: pointer;
     align-items: center;
+    transition: $transition;
 
-    @include media-hover {
-      color: #0a8;
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #0a8;
+      }
     }
   }
 

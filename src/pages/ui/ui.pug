@@ -16,31 +16,12 @@ block content
         +breadcrumbs-item("Главная","https://google.com")
         +breadcrumbs-item("Контакты")
       h1(class='mt-6 m:mt-3') Контакты
-      //FIXME: поправить margin-top для планшета
-      //FIXME: вынести в отдельный компонент (придумать название )
-      div(class='mt-12 grid grid-cols-3 gap-6 d:mt-6 d:grid-cols-2 d:gap-3 m:mt-6 m:grid-cols-1')
-        //FIXME: убрать теги из аргументов миксина
-        //FIXME: поправить gap на планшете
+      +contact-gallery
         +contact-card("Секретарь", "Как стать умнее или избавиться от йододефицита", [{ text: "8 812 448-54-65", href: "tel:88124485465"}, {text: "help_gendir@lekker.ru", href: "mailto:help_gendir@lekker.ru"}], "_green")
 
         +contact-card("Отдел продаж", "", [{text: "8 812 702-72-62", href: "tel:88127027262"}, {text: "prodazha@lekker.ru", href: "mailto:prodazha@lekker.ru"}], "_pink")
 
         +contact-card("Отдел рекламы", "", [{text: "reklama@lekker.ru", href: "mailto:reklama@lekker.ru"}], "_sandy")
-      //FIXME: поправить margin-top на десктопе
-      //FIXME: убрать div
-      //FIXME: поменять местами youtube и vk
-      //FIXME: вынести в отдельный компонент socilas
-      div(
-        class='mt-[10px] flex items-center justify-end gap-[21px] d:flex-col d:items-start d:gap-3 m:mt-12 m:flex-col m:items-start m:gap-3'
-      )
-        h5(class='basis-[600px] d:basis-auto m:basis-auto') Мы в социальных сетях
-        div(class='flex gap-[21px] d:gap-3 m:gap-[19px]')
-          +big-social-button("_youtube")
-            +youtube
-          +big-social-button("_vk")
-            +vk
-          +big-social-button("_odnoklassniki")
-            +odnoklassniki
+      +socials(class='mt-6 d:mt-[10px] m:mt-[10px]')
       +location(class='mt-6 m:mt-12')
-      //FIXME: убрать теги из аргументов миксина
       +contact-form("Связаться с нами")(class='mt-32 d:mt-12 m:mt-[4.625rem]')

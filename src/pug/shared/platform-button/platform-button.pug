@@ -1,6 +1,6 @@
-mixin big-social-button(mods)
+mixin platform-button(mods)
   -
-    const baseName = 'big-social-button'
+    const baseName = 'platform-button'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -9,7 +9,5 @@ mixin big-social-button(mods)
       }
       allMods = allMods.trim()
     }
-  //FIXME: слишком длинное название
-  //FIXME: дожлжно быть ссылкой
-  .big-social-button(class=allMods)&attributes(attributes)
+  a.platform-button(class=allMods)&attributes(attributes)
     block

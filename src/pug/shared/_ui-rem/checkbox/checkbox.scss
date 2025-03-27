@@ -20,7 +20,7 @@
 
     transition: $transition;
 
-    @media #{media('>',d)} {
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
       &:hover {
         .checkmark {
           border: rem(2px) solid var(--unnamed, #62215b);

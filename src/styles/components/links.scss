@@ -22,7 +22,7 @@
     transition-property: transform;
   }
 
-  @include media-hover {
+  @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
     &:hover::after {
       transform: scaleX(1);
     }

@@ -1,18 +1,16 @@
 -
 header.header
   .header__burger-menu
-    //FIXME: исправить ссылку на кнопку
     +icon-button("_primary")(href='#')
       +burger
   a.header__logo(href='/')
     +logo
   .header__buttons
-    //FIXME: убрать лишний класс
-    +button("_primary, _text-padding-s")(href='#')
+    //TODO: убрать лишний класс?
+    +button("_primary, _px32")(href='#')
       +more
       span Продукция
     +icon-button(href='#')
-      //FIXME: поправить ховер кнопки
       +search
     +icon-button(href='#')
       +phone
@@ -23,7 +21,5 @@ header.header
     a(href='#', class='link') Контакты
   .header__contact
     address
-      //FIXME: как мне позвонить?
-      a(href='#', class='link link_semibold') 8 812 448-54-65
-      //FIXME: поправить ховер кнопки
-    +button("_secondary, _text-padding")(href='#') Стать партнером
+      a(href='tel:88124485465', class='link link_semibold') 8 812 448-54-6
+    +button("_secondary, _px32")(href='#') Стать партнером

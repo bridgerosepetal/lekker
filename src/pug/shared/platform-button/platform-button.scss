@@ -1,4 +1,5 @@
-.big-social-button {
+.platform-button {
+  // TODO: тут тоже убрать переменные? придется захардкодить box-shadow: inset 0 0 0 rem(12px) четыре раза
   --_accent: var(--accent, #f0f0f0);
 
   display: flex;
@@ -25,9 +26,11 @@
     width: rem(104px);
   }
 
-  @include media-hover {
-    box-shadow: inset 0 0 0 rem(12px) var(--accent, #f0f0f0);
-    border: none;
+  @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: inset 0 0 0 rem(12px) var(--accent, #f0f0f0);
+      border: none;
+    }
   }
 
   svg {

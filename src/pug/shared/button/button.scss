@@ -2,9 +2,6 @@
 // second padding variant is text-padding, may rename to "bloated-padding" or "cushion"
 
 .button {
-  //FIXME: убрать из компонентов, использовать глобальные переменные (проверить во всех компонентах)
-  --_font: var(--font, 'Rubik', 'Arial', sans-serif);
-
   display: inline-flex;
   padding: 0;
   background-color: $primary;
@@ -39,15 +36,9 @@
         background-color: $primary-hover;
       }
     }
-
-    // &:hover {
-    //   background-color: $primary-hover;
-    // }
   }
 
-  //FIXME: поправить имя класса на _p-32
-  //FIXME: поправить таким образом везде классы
-  &_text-padding {
+  &_px-32 {
     padding-inline: rem(32px);
 
     @media #{media('<',d)} {
@@ -59,6 +50,14 @@
     background: #f3f3f3;
     color: #364a46;
     padding: rem(25px);
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: #364a46;
+        color: #fff;
+      }
+    }
+
     svg {
       width: rem(24px);
       height: rem(24px);
@@ -92,7 +91,7 @@
       gap: rem(8px);
     }
 
-    &_text-padding {
+    &_px32 {
       padding-inline: rem(12px);
     }
 

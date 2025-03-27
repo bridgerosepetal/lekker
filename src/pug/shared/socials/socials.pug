@@ -1,0 +1,21 @@
+mixin socials(mods)
+  -
+    const baseName = 'socials'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  section.socials(class=allMods)&attributes(attributes)
+    h5(class='basis-[600px] d:basis-auto m:basis-auto') Мы в социальных сетях
+    .socials__buttons
+      +platform-button("_vk")(href='https://vk.com')
+        +vk
+      +platform-button("_youtube")(href='https://youtube.com')
+        +youtube
+      +platform-button("_odnoklassniki")(href='https://ok.ru')
+        +okru

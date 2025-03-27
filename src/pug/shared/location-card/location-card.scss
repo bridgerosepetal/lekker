@@ -6,7 +6,6 @@
   justify-content: space-between;
 
   border-radius: rem(24px);
-  // FIXME: поправить border-radius на адаптиве
   padding: rem(32px);
 
   background-color: var(--_accent);
@@ -14,6 +13,7 @@
 
   @media #{media('<',d)} {
     padding: rem(12px);
+    border-radius: rem(12px);
   }
 
   &__head {
@@ -32,7 +32,7 @@
       font-family: Rubik;
       font-size: 18px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 160%; /* 28.8px */
 
       @media #{media('<',d)} {
@@ -42,8 +42,7 @@
         font-family: Rubik;
         font-size: rem(12px);
         font-style: normal;
-        //FIXME: поправить на 300. Проверить в других местах (хедер как минимум)
-        font-weight: 400;
+        font-weight: 300;
         line-height: 130%; /* 15.6px */
       }
     }
@@ -58,7 +57,7 @@
       font-family: Rubik;
       font-size: rem(12px);
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 130%; /* 15.6px */
       text-transform: uppercase;
     }
