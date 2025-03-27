@@ -12,10 +12,9 @@ mixin contact-form(title, mods)
   .contact-form(class=allMods)&attributes(attributes)
     form
       .contact-form__squiggy-shape
-        //FIXME: использовать компонент picture
-        img(src='../../../public/images/squiggy-shape.png')
+        +picture('squiggy-shape.png')
       .contact-form__squiggy-heart
-        img(src='../../../public/images/squiggy-heart.png')
+        +picture('squiggy-heart.png')
       h2.contact-form__head!= title
       +ui-input({id: 'name', label: 'Ваше имя'})(placeholder='Ваше имя')(
         data-validate='text'
