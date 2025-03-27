@@ -9,7 +9,6 @@ mixin contact-form(title, mods)
       }
       allMods = allMods.trim()
     }
-  //FIXME: использовать компонент ui-input, проверить чтобы ошибка валидации поля была под самим полем. Написать стили для поля с ошибкой (красная обводка)
   .contact-form(class=allMods)&attributes(attributes)
     form
       .contact-form__squiggy-shape
@@ -17,12 +16,19 @@ mixin contact-form(title, mods)
         img(src='../../../public/images/squiggy-shape.png')
       .contact-form__squiggy-heart
         img(src='../../../public/images/squiggy-heart.png')
-      .contact-form__head!= title
-      input(type='text')(placeholder='Ваше имя')(data-validate='text')(data-error-message='')(
+      h2.contact-form__head!= title
+      +ui-input({id: 'name', label: 'Ваше имя'})(placeholder='Ваше имя')(
+        data-validate='text'
+      )(
         minlength=3
       )
-      input(type='email')(placeholder='E-mail')(data-validate='email')(data-error-message='')
-      input(type='tel')(placeholder='Телефон')(data-validate='tel')(data-mask-phone='')
+      //- input(type='email')(placeholder='E-mail')(data-validate='email')(data-error-message='')
+      +ui-input({id: 'email', label: 'Email'})(data-validate='email')(placeholder='Email')
+      +ui-input({id: 'number', label: 'Телефон'}, type='tel')(data-validate='tel')(
+        placeholder='Телефон'
+      )(
+        data-mask-phone=''
+      )
       textarea(name='', cols='30', rows='6')(placeholder='Сообщение')(data-error-message='')
       span(data-error-container='')(class='text-red-400')
       .contact-form__bottom-panel

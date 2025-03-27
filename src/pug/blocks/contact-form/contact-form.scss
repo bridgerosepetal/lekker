@@ -38,7 +38,6 @@
         line-height: 130%; /* 15.6px */
         margin: 0;
         width: 100%;
-        //FIXME: убрать и добавить margin-top к футеру
         margin-bottom: rem(28px);
       }
     }
@@ -83,11 +82,9 @@
     gap: rem(8px);
     max-width: rem(924px);
     margin-inline: auto;
-    margin-bottom: rem(148px);
 
     @media #{media('<',d)} {
       max-width: rem(366px);
-      margin-bottom: rem(48px);
     }
 
     input,
@@ -99,6 +96,10 @@
       font-family: Rubik;
       background-color: #f3f3f3;
       resize: none;
+
+      border: rem(2px) solid transparent;
+
+      transition: $transition;
 
       @media #{media('<',d)} {
         padding: rem(16px);
@@ -120,6 +121,17 @@
           font-size: rem(14px);
           line-height: 130%; /* 18.2px */
         }
+      }
+
+      @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: #eaeaea;
+        }
+      }
+
+      &:active,
+      &:focus {
+        border: rem(2px) solid #0a8;
       }
     }
 

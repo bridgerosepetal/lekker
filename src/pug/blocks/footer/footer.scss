@@ -20,6 +20,7 @@
   padding-inline: rem(24px);
   padding-top: rem(80px);
   overflow: hidden;
+  margin-top: rem(148px);
 
   color: #364a46;
 
@@ -52,6 +53,7 @@
       'disclaimer disclaimer disclaimer disclaimer';
     column-gap: rem(12px);
     padding-inline: rem(12px);
+    margin-top: rem(48px);
   }
 
   @media #{media('<',m)} {
