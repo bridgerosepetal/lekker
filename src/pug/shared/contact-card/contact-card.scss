@@ -78,8 +78,6 @@
     font-weight: 400;
     line-height: normal;
 
-    //FIXME: поправить gap на планшете
-
     a {
       display: inline-flex;
       gap: rem(16px);
@@ -90,6 +88,7 @@
       font-size: rem(16px);
       line-height: 130%; /* 20.8px */
       flex-basis: rem(38px);
+      gap: rem(8px);
     }
   }
 

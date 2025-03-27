@@ -17,9 +17,8 @@ block content
         +breadcrumbs-item("Контакты")
       h1(class='mt-6 m:mt-3') Контакты
       //FIXME: поправить margin-top для планшета
-      //FIXME: d поменять на d
       //FIXME: вынести в отдельный компонент (придумать название )
-      div(class='mt-12 grid grid-cols-3 gap-6 d:grid-cols-2 m:mt-6 m:grid-cols-1 m:gap-3')
+      div(class='mt-12 grid grid-cols-3 gap-6 d:mt-6 d:grid-cols-2 d:gap-3 m:mt-6 m:grid-cols-1')
         //FIXME: убрать теги из аргументов миксина
         //FIXME: поправить gap на планшете
         +contact-card("Секретарь", "Как стать умнее или избавиться от йододефицита", [{ text: "8 812 448-54-65", href: "tel:88124485465"}, {text: "help_gendir@lekker.ru", href: "mailto:help_gendir@lekker.ru"}], "_green")
