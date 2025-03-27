@@ -12,31 +12,57 @@
   padding: rem(8px);
 
   border: rem(2px) solid #f0f0f0;
-  //FIXME: поправить радусы на адаптиве
   border-radius: rem(20px);
 
   box-shadow: 0px 14px 24px 0px rgba(0, 0, 0, 0.04);
   backdrop-filter: blur(12px);
 
-  //FIXME: поправить боковые отступы на адаптиве
+  @media #{media('<',d)} {
+    margin-inline: rem(12px);
+  }
 
   & > * {
     grid-column-end: span 3;
+
+    @media #{media('<',d)} {
+      grid-column-end: span 1;
+    }
   }
 
   &__burger-menu {
     display: none;
+
+    @media #{media('<', m)} {
+      display: inline-flex;
+    }
   }
 
   &__logo {
-    grid-column-start: 1;
-    padding-left: rem(16px);
     display: flex;
+    grid-column-start: 1;
+    padding-left: rem(24px);
     pointer-events: none;
+
     svg {
       height: rem(32px);
       pointer-events: auto;
       fill: #00aa88;
+      width: fit-content;
+    }
+
+    @media #{media('<',d)} {
+      padding-left: rem(8px);
+      svg {
+        height: rem(18px);
+      }
+    }
+
+    @media #{media('<',m)} {
+      border-radius: rem(12px);
+      grid-column-start: 2;
+      grid-column-end: span 2;
+      align-items: flex-start;
+      padding: 0;
     }
   }
 
@@ -44,8 +70,23 @@
     display: flex;
     gap: rem(8px);
     grid-column-start: 4;
+
     & > :last-child {
       display: none;
+    }
+
+    @media #{media('<',d)} {
+      grid-column-start: 3;
+      grid-column-end: span 2;
+      justify-content: flex-end;
+      & > :last-child {
+        display: inline-flex;
+      }
+    }
+
+    @media #{media('<',m)} {
+      grid-column-start: 4;
+      grid-column-end: span 1;
     }
   }
 
@@ -63,6 +104,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @media #{media('<',d)} {
+      display: none;
+    }
   }
 
   &__contact {
@@ -72,50 +117,17 @@
     justify-content: space-between;
     align-items: center;
     padding-left: rem(60px);
-  }
 
+    @media #{media('<',d)} {
+      display: none;
+    }
+  }
   @media #{media('<',d)} {
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
-    & > * {
-      grid-column-end: span 1;
-    }
-    &__logo {
-      svg {
-        height: rem(18px);
-      }
-    }
-    &__buttons {
-      grid-column-start: 3;
-      grid-column-end: span 2;
-      justify-content: flex-end;
-      & > :last-child {
-        display: inline-flex;
-      }
-    }
-    &__navigation {
-      display: none;
-    }
-    &__contact {
-      display: none;
-    }
   }
 
   @media #{media('<',m)} {
-    border-radius: rem(12px);
-
-    &__burger-menu {
-      display: inline-flex;
-    }
-    &__logo {
-      grid-column-start: 2;
-      grid-column-end: span 2;
-      justify-content: center;
-    }
-    &__buttons {
-      grid-column-start: 4;
-      grid-column-end: span 1;
-    }
     &__buttons > *:last-child,
     &__buttons > *:first-child {
       display: none;

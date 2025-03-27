@@ -1,6 +1,6 @@
-mixin location-showcase(mods)
+mixin location(mods)
   -
-    const baseName = 'location-showcase'
+    const baseName = 'location'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,7 +10,7 @@ mixin location-showcase(mods)
       allMods = allMods.trim()
     }
 
-  section.location-showcase(class=allMods)&attributes(attributes)
+  section.location(class=allMods)&attributes(attributes)
     +location-card("<h5>Офис</h5>", "194044, Санкт-петербург, Беловодский переулок, 6", "пн-пт: 9–17:30", "_green")
     +location-card("<h5>Производство</h5>", "194044, Санкт-Петербург, пер. Зеленков, 6, лит. А, корп. 1, пом. 11", "пн-пт: 9–17:30", "_blue")
     img(
