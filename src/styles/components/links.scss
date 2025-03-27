@@ -5,21 +5,25 @@
 
   &::after {
     content: '';
+    display: block;
+
+    position: absolute;
+    bottom: rem(-4px);
+
+    background-color: currentColor;
+
+    width: 100%;
+    height: rem(2px);
+    border-radius: rem(2px);
+
     transform: scaleX(0);
     transform-origin: left;
+    transition: $transition;
+    transition-property: transform;
   }
 
   @include media-hover {
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: rem(-4px);
-      background-color: currentColor;
-      width: 100%;
-      height: rem(2px);
-      transition: $transition;
-      transition-property: transform;
+    &:hover::after {
       transform: scaleX(1);
     }
   }
