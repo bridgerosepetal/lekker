@@ -1,44 +1,56 @@
 -
 footer.footer
   //FIXME: поменять структуру футера
-  .footer__background
-  .footer__logo
-    +logo
-  nav.footer__navigation
-    ul
-      li
-        a.link(href='#') О компании
-      li
-        a.link(href='#') Новости
-      li
-        a.link(href='#') Контакты
-      li
-        a.link(href='#') Где купить
-  .footer__mascot
-    img(src='../../public/images/mascot.png', width='134px')
-  .footer__policy
-    a.link Политика в отношении обработки персональных данных
-  .footer__socials
-    a.footer__social-box(href='https://vk.com')
-      +vk
-    a.footer__social-box(href='https://ok.com')
-      +okru
-    a.footer__social-box(href='https://youtube.com')
-      +youtube
-    a.footer__social-box(href='https://rutube.ru')
-      +rutube
-  address.footer__contacts
-    ul
-      li
-        a.link(href='tel:+78124485465') 8 812 448-54-65
-      li
-        a.link(href='mailto:info@lekker.ru') info@lekker.ru
-  .footer__action-call
-    +button("_primary, _px32")(href='#') Стать партнером
-  .footer__made-in
-    span
-      | Сделано в&nbsp;
-      a.link(class='ml-0 font-bold text-[#DD5799]') CloudMill
-  .footer__copyright © 2002-2023 ООО «Леккер»
+  .footer__head
+    .footer__logo-and-mascot
+      .footer__logo
+        +logo
+      .footer__mascot
+        img(src='../../public/images/mascot.png', width='134px')
+    nav.footer__navigation
+      ul
+        li
+          a.link(href='#') О компании
+        li
+          a.link(href='#') Новости
+        li
+          a.link(href='#') Контакты
+        li
+          a.link(href='#') Где купить
+    .footer__contacts-and-socials
+      address.footer__contacts
+        ul
+          li
+            a.link(href='tel:+78124485465') 8 812 448-54-65
+          li
+            a.link(href='mailto:info@lekker.ru') info@lekker.ru
+      .footer__socials
+        a.footer__social-box(href='https://vk.com')
+          +vk
+        a.footer__social-box(href='https://ok.com')
+          +okru
+        a.footer__social-box(href='https://youtube.com')
+          +youtube
+        a.footer__social-box(href='https://rutube.ru')
+          +rutube
+    .footer__lone-socials
+      a.footer__social-box(href='https://vk.com')
+        +vk
+      a.footer__social-box(href='https://ok.com')
+        +okru
+      a.footer__social-box(href='https://youtube.com')
+        +youtube
+      a.footer__social-box(href='https://rutube.ru')
+        +rutube
+    .footer__action-call
+      +button("_primary, _px-32")(href='#') Стать партнером
+    .footer__bottom
+      .footer__copyright © 2002-2023 ООО «Леккер»
+      .footer__policy
+        a.link(href='#') Политика в отношении обработки персональных данных
+      .footer__made-in
+        span
+          | Сделано в&nbsp;
+          a.link(class='ml-0 font-bold text-[#DD5799]') CloudMill
   .footer__disclaimer
     p ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ

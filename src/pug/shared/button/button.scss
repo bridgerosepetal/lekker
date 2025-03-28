@@ -23,6 +23,25 @@
 
   transition: $transition;
 
+  @media #{media('<',d)} {
+    border-radius: rem(8px);
+    font-size: rem(12px);
+    padding: rem(14px) rem(12px);
+
+    &_primary {
+      gap: rem(8px);
+    }
+
+    &_px32 {
+      padding-inline: rem(12px);
+    }
+
+    svg {
+      width: rem(16px);
+      height: rem(16px);
+    }
+  }
+
   &_full {
     width: 100%;
   }
@@ -42,7 +61,16 @@
     padding-inline: rem(32px);
 
     @media #{media('<',d)} {
-      paddin-inline: rem(24px);
+      padding-inline: rem(24px);
+      padding-block: rem(16px);
+    }
+  }
+
+  &_padding-small {
+    padding: rem(25px) rem(24px);
+
+    @media #{media('<',d)} {
+      padding: rem(14px) rem(12px);
     }
   }
 
@@ -80,24 +108,5 @@
   svg {
     width: rem(24px);
     height: rem(24px);
-  }
-
-  @media #{media('<',d)} {
-    border-radius: rem(8px);
-    font-size: rem(12px);
-    padding: rem(14px) rem(12px);
-
-    &_primary {
-      gap: rem(8px);
-    }
-
-    &_px32 {
-      padding-inline: rem(12px);
-    }
-
-    svg {
-      width: rem(16px);
-      height: rem(16px);
-    }
   }
 }

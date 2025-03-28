@@ -1,48 +1,124 @@
 .footer {
-  //FIXME: избавиться от 16 колонок, сделать 4 колонки, убрать grid-template-areas
-
-  display: grid;
   column-gap: rem(24px);
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-areas:
-    '. logo logo . navigation navigation navigation . contacts contacts . . action-call action-call action-call .'
-    '. mascot mascot . navigation navigation navigation . socials socials socials . action-call action-call action-call .'
-    '. mascot mascot . navigation navigation navigation . socials socials socials . . . . .'
-    '. copyright copyright . policy policy policy policy . . . . made-in made-in made-in . '
-    'disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer disclaimer';
-
   position: relative;
-
-  padding-inline: rem(24px);
-  padding-top: rem(80px);
   overflow: hidden;
   margin-top: rem(148px);
 
   color: #364a46;
 
   @media #{media('<',d)} {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
-      'navigation .  contacts mascot'
-      'socials socials . action-call'
-      'policy policy . .'
-      'copyright . . .'
-      'made-in . . .'
-      'disclaimer disclaimer disclaimer disclaimer';
-    column-gap: rem(12px);
-    padding-inline: rem(12px);
     margin-top: rem(48px);
   }
 
   @media #{media('<',m)} {
-    grid-template-areas:
-      'navigation navigation mascot mascot'
-      'contacts contacts action-call action-call'
-      'socials socials socials socials'
-      'policy policy policy policy'
-      'copyright copyright copyright copyright'
-      'made-in made-in made-in made-in'
-      'disclaimer disclaimer disclaimer disclaimer';
+  }
+
+  &__head {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    padding-inline: rem(24px);
+
+    padding-block: rem(80px) rem(49px);
+    background-color: #f3f3f3;
+
+    @media #{media('<',d)} {
+      grid-template-columns: 2fr 1fr 1fr;
+      padding-block: rem(32px) rem(36px);
+
+      border-radius: rem(24px);
+    }
+
+    @media #{media('<',m)} {
+      grid-template-columns: repeat(2, 1fr);
+
+      padding-inline: rem(12px);
+    }
+  }
+
+  &__bottom {
+    grid-column-end: span 4;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    padding-inline: rem(24px);
+    grid-template-rows: 2;
+
+    @media #{media('<',d)} {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+      padding-inline: 0;
+      justify-items: left;
+
+      gap: rem(8px);
+    }
+
+    @media #{media('<',m)} {
+      grid-column-end: span 2;
+    }
+  }
+
+  &__logo-and-mascot {
+    grid-column-start: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-self: center;
+
+    @media #{media('<',d)} {
+      grid-column-start: 3;
+      margin-bottom: rem(26px);
+    }
+
+    @media #{media('<',m)} {
+      grid-column-start: 2;
+    }
+  }
+
+  &__contacts-and-socials {
+    grid-column-start: 3;
+    display: flex;
+    flex-direction: column;
+
+    @media #{media('<',d)} {
+      grid-column-start: 2;
+      grid-row-start: 1;
+    }
+
+    @media #{media('<',d)} {
+      grid-column-start: 1;
+      grid-row-start: 2;
+    }
+  }
+
+  &__lone-socials {
+    grid-column-start: 1;
+    grid-row-start: 2;
+
+    display: inline-grid;
+    grid-auto-flow: column;
+    gap: rem(8px);
+    justify-content: start;
+    display: none;
+
+    margin-top: rem(10px);
+
+    @media #{media('<',d)} {
+      gap: rem(4px);
+
+      display: inline-grid;
+    }
+
+    @media #{media('<',m)} {
+      grid-column-start: 1;
+      grid-row-start: 3;
+      grid-column-end: span 2;
+
+      margin-top: rem(39px);
+    }
   }
 
   &__background {
@@ -71,10 +147,11 @@
   }
 
   &__logo {
-    grid-area: logo;
+    height: rem(32px);
     svg {
-      height: rem(32px);
       fill: #364a46;
+      width: 100%;
+      height: 100%;
     }
 
     @media #{media('<',d)} {
@@ -83,13 +160,13 @@
   }
 
   &__mascot {
-    grid-area: mascot;
-
     margin-block: rem(60px);
 
     @media #{media('<',d)} {
       display: flex;
       justify-content: flex-end;
+
+      transform: translateX(rem(10px));
 
       margin-block: unset;
       align-items: flex-start;
@@ -101,7 +178,8 @@
   }
 
   &__copyright {
-    grid-area: copyright;
+    grid-column-start: 1;
+
     font-family: $font;
     font-size: rem(14px);
     font-style: normal;
@@ -110,19 +188,20 @@
     color: hsl(168, 15.63%, 25.1% / 0.7);
 
     @media #{media('<',d)} {
-      color: $text;
-      font-family: Rubik;
       font-size: rem(12px);
-      font-style: normal;
-      font-weight: 300;
-      line-height: 120%; /* 14.4px */
 
-      margin-top: rem(12px);
+      grid-row-start: 2;
     }
   }
 
   &__navigation {
-    grid-area: navigation;
+    grid-column-start: 2;
+
+    @media #{media('<',d)} {
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
+
     & > ul > li {
       color: $text;
 
@@ -153,7 +232,22 @@
   }
 
   &__policy {
-    grid-area: policy;
+    grid-column-start: 2;
+    grid-column-end: span 2;
+    justify-self: start;
+
+    @media #{media('<',d)} {
+      grid-column-start: 1;
+      grid-row-start: 1;
+
+      margin-top: rem(21px);
+
+      font-size: rem(12px);
+    }
+
+    @media #{media('<',m)} {
+      margin-top: rem(32px);
+    }
 
     & a {
       color: $text;
@@ -163,21 +257,18 @@
       font-style: normal;
       font-weight: 300;
       line-height: 120%; /* 19.2px */
-    }
 
-    @media #{media('<',d)} {
-      margin-top: rem(36px);
-      font-size: rem(12px);
-    }
-
-    @media #{media('<',m)} {
-      margin-top: rem(32px);
+      @media #{media('<',d)} {
+        color: var(--, #364a46);
+        font-size: rem(12px);
+        font-style: normal;
+        font-weight: 300;
+        line-height: 120%; /* 14.4px */
+      }
     }
   }
 
   &__contacts {
-    grid-area: contacts;
-
     color: $text;
 
     font-family: var('TT Firs Neue', 'Arial', sans-serif);
@@ -197,13 +288,11 @@
     }
 
     @media #{media('<',m)} {
-      margin-top: rem(32px);
+      margin-top: 0;
     }
   }
 
   &__socials {
-    grid-area: socials;
-
     display: inline-grid;
     grid-auto-flow: column;
     gap: rem(8px);
@@ -214,6 +303,7 @@
     @media #{media('<',d)} {
       gap: rem(4px);
       margin-top: rem(36px);
+      display: none;
     }
 
     @media #{media('<',m)} {
@@ -223,24 +313,30 @@
   }
 
   &__action-call {
-    grid-area: action-call;
+    grid-column-start: 4;
+    justify-self: center;
 
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
 
     @media #{media('<',d)} {
-      margin-top: rem(20px);
+      grid-column-start: 3;
+
+      margin-top: 0;
+    }
+
+    @media #{media('<',m)} {
+      grid-column-start: 2;
+      grid-row-start: 2;
     }
   }
 
   &__made-in {
-    grid-area: made-in;
+    grid-column-start: 4;
 
     display: flex;
     justify-content: flex-end;
-
-    padding-bottom: rem(48px);
 
     color: $text;
 
@@ -251,8 +347,10 @@
     line-height: 120%; /* 19.2px */
 
     @media #{media('<',d)} {
+      grid-column-start: 1;
+      grid-row-start: 3;
+
       font-size: rem(12px);
-      margin-top: rem(12px);
     }
 
     @media #{media('<',m)} {
