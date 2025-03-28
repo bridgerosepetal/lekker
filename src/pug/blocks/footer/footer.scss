@@ -312,6 +312,7 @@
   &__action-call {
     grid-column-start: 4;
     justify-self: center;
+    z-index: 1;
 
     display: flex;
     justify-content: flex-end;

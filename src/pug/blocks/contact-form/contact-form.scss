@@ -115,6 +115,15 @@
         border-radius: rem(12px);
       }
 
+      &:active,
+      &:focus {
+        border: rem(2px) solid #0a8;
+      }
+
+      &:has(~ .input-ui__error_visible) {
+        border-color: red;
+      }
+
       &::placeholder {
         color: #364a46;
         opacity: 0.5;
@@ -134,11 +143,6 @@
         &:hover {
           background-color: #eaeaea;
         }
-      }
-
-      &:active,
-      &:focus {
-        border: rem(2px) solid #0a8;
       }
     }
 
