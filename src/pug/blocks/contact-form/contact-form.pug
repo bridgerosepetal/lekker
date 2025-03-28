@@ -9,7 +9,7 @@ mixin contact-form(title, mods)
       }
       allMods = allMods.trim()
     }
-  .contact-form(class=allMods)&attributes(attributes)
+  section.contact-form(class=allMods)&attributes(attributes)
     form
       .contact-form__squiggy-shape
         +picture('squiggy-shape.png')
