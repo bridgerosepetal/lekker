@@ -1,8 +1,4 @@
 .footer {
-  --_text: var(--text, #364a46);
-  --_font: var(--font, 'Rubik', 'Arial', sans-serif);
-  --_font-secondary: var(--font-secondary, 'TT Firs Neue', 'Arial', sans-serif);
-
   //FIXME: избавиться от 16 колонок, сделать 4 колонки, убрать grid-template-areas
 
   display: grid;
@@ -23,24 +19,6 @@
   margin-top: rem(148px);
 
   color: #364a46;
-
-  //FIXME: убрать этот элемент, сделать через бордеры
-  &::before {
-    content: '';
-    grid-column: 1 / -1; // spans all columns
-    grid-row: 1 / -2; // covers from first row up to the row before disclaimer
-    background: #f3f3f3; // match your footer background
-    z-index: -1; // put it behind the grid items
-
-    margin-top: rem(-80px);
-    margin-inline: rem(-24px);
-
-    pointer-events: none; // optional: allow clicks through it
-
-    @media #{media('<',d)} {
-      border-radius: rem(24px);
-    }
-  }
 
   @media #{media('<',d)} {
     grid-template-columns: repeat(4, 1fr);
@@ -124,7 +102,7 @@
 
   &__copyright {
     grid-area: copyright;
-    font-family: var(--_font, 'Rubik');
+    font-family: $font;
     font-size: rem(14px);
     font-style: normal;
     font-weight: 300;
@@ -132,7 +110,7 @@
     color: hsl(168, 15.63%, 25.1% / 0.7);
 
     @media #{media('<',d)} {
-      color: var(--_text, #364a46);
+      color: $text;
       font-family: Rubik;
       font-size: rem(12px);
       font-style: normal;
@@ -146,9 +124,9 @@
   &__navigation {
     grid-area: navigation;
     & > ul > li {
-      color: var(--_text, #364a46);
+      color: $text;
 
-      font-family: var(--font-secondary, 'TT Firs Neue');
+      font-family: var($font-secondary, 'TT Firs Neue');
       font-size: rem(40px);
       font-style: normal;
       font-weight: 600;
@@ -156,7 +134,7 @@
       letter-spacing: rem(-0.8px);
 
       @media #{media('<',d)} {
-        color: var(--_text, #364a46);
+        color: $text;
         font-family: 'TT Firs Neue';
         font-size: rem(24px);
         font-style: normal;
@@ -178,9 +156,9 @@
     grid-area: policy;
 
     & a {
-      color: var(--_text, #364a46);
+      color: $text;
 
-      font-family: var(--_font, 'Rubik');
+      font-family: $font;
       font-size: rem(16px);
       font-style: normal;
       font-weight: 300;
@@ -200,9 +178,9 @@
   &__contacts {
     grid-area: contacts;
 
-    color: var(--_text, #364a46);
+    color: $text;
 
-    font-family: var(--_font-secondary, 'TT Firs Neue', 'Arial', sans-serif);
+    font-family: var('TT Firs Neue', 'Arial', sans-serif);
     font-size: rem(24px);
     font-style: normal;
     font-weight: 600;
@@ -264,9 +242,9 @@
 
     padding-bottom: rem(48px);
 
-    color: var(--_text, #364a46);
+    color: $text;
 
-    font-family: var(--_font, 'Rubik', 'Arial', sans-serif);
+    font-family: $font;
     font-size: rem(16px);
     font-style: normal;
     font-weight: 300;
@@ -332,7 +310,7 @@
 
     color: rgba(0, 0, 0, 0.15);
     text-align: center;
-    font-family: var(--_font, 'Rubik', 'Arial', sans-serif);
+    font-family: $font;
     font-size: rem(37px);
     font-style: normal;
     font-weight: 300;
