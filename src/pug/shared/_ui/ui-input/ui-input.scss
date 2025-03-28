@@ -4,7 +4,6 @@
 
   input:focus ~ label,
   input.filled ~ label {
-    transform: translateY(-1em);
     opacity: 0.5;
     visibility: visible;
   }
@@ -22,7 +21,6 @@
     transform-origin: left center;
     color: #364a46;
     opacity: 0;
-
     font-family: Rubik;
     font-size: rem(14px);
     font-style: normal;
@@ -33,6 +31,7 @@
     visibility: hidden;
 
     padding: 0 4px;
+    transform: translateY(-1em);
 
     @media #{media('<',d)} {
       display: none;

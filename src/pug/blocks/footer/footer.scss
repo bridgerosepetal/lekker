@@ -13,7 +13,27 @@
   @media #{media('<',m)} {
   }
 
+  &__shape {
+    position: absolute;
+
+    bottom: 0;
+    right: rem(-250px);
+
+    @media #{media('<',d)} {
+      transform: scale(0.485);
+      left: rem(12px);
+      transform-origin: bottom left;
+    }
+
+    @media #{media('<',m)} {
+      left: rem(-12px);
+      transform: scale(0.8);
+    }
+  }
+
   &__head {
+    position: relative;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
@@ -51,12 +71,14 @@
       grid-template-rows: repeat(3, auto);
       padding-inline: 0;
       justify-items: left;
+      margin-top: rem(36px);
 
       gap: rem(8px);
     }
 
     @media #{media('<',m)} {
       grid-column-end: span 2;
+      margin-top: rem(21px);
     }
   }
 
@@ -88,7 +110,7 @@
       grid-row-start: 1;
     }
 
-    @media #{media('<',d)} {
+    @media #{media('<',m)} {
       grid-column-start: 1;
       grid-row-start: 2;
     }
@@ -97,6 +119,7 @@
   &__lone-socials {
     grid-column-start: 1;
     grid-row-start: 2;
+    z-index: 1;
 
     display: inline-grid;
     grid-auto-flow: column;
@@ -121,31 +144,6 @@
     }
   }
 
-  &__background {
-    grid-column-start: 1;
-    grid-column-end: -1;
-    grid-row-start: 1;
-    grid-row-end: -2;
-
-    //FIXME: убрать, сделать абсолютом, через picture добавить в верстку
-    background-image: url('../../public/images/squiggy-footer.png');
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    margin-inline: rem(-24px);
-    background-size: 40%;
-
-    @media #{media('<',d)} {
-      background-image: url('../../public/images/squiggy-footer2.png');
-      background-repeat: no-repeat;
-      background-position: bottom left;
-      background-size: 100%;
-    }
-
-    @media #{media('<',m)} {
-      background-size: 200%;
-    }
-  }
-
   &__logo {
     height: rem(32px);
     svg {
@@ -161,6 +159,10 @@
 
   &__mascot {
     margin-block: rem(60px);
+
+    img {
+      width: rem(134px);
+    }
 
     @media #{media('<',d)} {
       display: flex;
@@ -185,7 +187,8 @@
     font-style: normal;
     font-weight: 300;
     line-height: 120%; /* 16.8px */
-    color: hsl(168, 15.63%, 25.1% / 0.7);
+    color: hsl(168, 15.63%, 25.1%);
+    opacity: 0.7;
 
     @media #{media('<',d)} {
       font-size: rem(12px);
@@ -240,13 +243,7 @@
       grid-column-start: 1;
       grid-row-start: 1;
 
-      margin-top: rem(21px);
-
       font-size: rem(12px);
-    }
-
-    @media #{media('<',m)} {
-      margin-top: rem(32px);
     }
 
     & a {
@@ -309,7 +306,6 @@
     @media #{media('<',m)} {
       margin-top: rem(39px);
     }
-    //FIXME: поменять ховер эффект на тот что в макете
   }
 
   &__action-call {
@@ -334,6 +330,7 @@
 
   &__made-in {
     grid-column-start: 4;
+    z-index: 1;
 
     display: flex;
     justify-content: flex-end;
@@ -355,7 +352,7 @@
 
     @media #{media('<',m)} {
       justify-content: flex-start;
-      padding-bottom: rem(32px);
+      padding-bottom: 0;
     }
 
     & > * {
@@ -388,9 +385,17 @@
       fill: #364a46;
     }
 
-    @include media-hover {
-      background-color: #fdfdfd;
-      box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: #364a46;
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+
+    &:active {
+      background-color: #4e635f;
     }
   }
 

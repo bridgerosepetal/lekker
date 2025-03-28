@@ -55,6 +55,10 @@
         background-color: $primary-hover;
       }
     }
+
+    &:active {
+      background-color: #dd5799;
+    }
   }
 
   &_px-32 {
@@ -84,6 +88,10 @@
         background-color: #364a46;
         color: #fff;
       }
+    }
+
+    &:active {
+      background-color: #4e635f;
     }
 
     svg {

@@ -2,11 +2,13 @@
 footer.footer
   //FIXME: поменять структуру футера
   .footer__head
+    .footer__shape
+      +picture('footer-marker.png')
     .footer__logo-and-mascot
       .footer__logo
         +logo
       .footer__mascot
-        img(src='../../public/images/mascot.png', width='134px')
+        +picture('footer-mascot.png')
     nav.footer__navigation
       ul
         li

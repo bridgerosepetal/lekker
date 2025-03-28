@@ -1,6 +1,4 @@
 .header {
-  // --_primary: var(--primary, #364a46);
-
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: 1fr;
@@ -63,6 +61,7 @@
       grid-column-end: span 2;
       align-items: flex-start;
       padding: 0;
+      justify-content: center;
     }
   }
 
