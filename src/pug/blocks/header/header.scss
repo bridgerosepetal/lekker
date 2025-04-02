@@ -36,10 +36,12 @@
   }
 
   &__logo {
-    display: flex;
     grid-column-start: 1;
     padding-left: rem(24px);
-    pointer-events: none;
+
+    a {
+      width: fit-content;
+    }
 
     svg {
       height: rem(32px);
@@ -56,6 +58,7 @@
     }
 
     @media #{media('<',m)} {
+      display: flex;
       border-radius: rem(12px);
       grid-column-start: 2;
       grid-column-end: span 2;
